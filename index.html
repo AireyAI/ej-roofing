@@ -592,6 +592,10 @@
         .ba-container {
             position: relative; overflow: hidden; border-radius: 20px;
             border: 1px solid var(--surface-border); user-select: none; touch-action: none;
+            aspect-ratio: 16/9;
+        }
+        @media (max-width: 768px) {
+            .ba-container { aspect-ratio: 4/3; border-radius: 16px; }
         }
         .ba-container img { display: block; width: 100%; height: 100%; object-fit: cover; }
         .ba-before { position: absolute; inset: 0; overflow: hidden; width: 50%; z-index: 2; }
@@ -684,8 +688,11 @@
         .form-input {
             width: 100%; padding: 14px 18px; background: var(--surface-overlay);
             border: 1px solid var(--surface-border); border-radius: 12px;
-            color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px;
+            color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px;
             transition: border-color 0.2s ease, box-shadow 0.2s ease; outline: none;
+        }
+        @media (max-width: 768px) {
+            .form-input { padding: 16px 18px; font-size: 16px; border-radius: 14px; }
         }
         .form-input::placeholder { color: var(--text-tertiary); }
         .form-input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(42,122,240,0.15); }
@@ -702,11 +709,21 @@
             position: fixed; bottom: 24px; right: 24px; z-index: 90;
             display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
         }
+        @media (max-width: 768px) {
+            .floating-cta {
+                bottom: 16px; right: 16px; gap: 10px;
+            }
+        }
         .floating-btn {
             width: 56px; height: 56px; border-radius: 16px; border: none;
             display: flex; align-items: center; justify-content: center;
             cursor: none; transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
             text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .floating-btn {
+                width: 48px; height: 48px; border-radius: 14px;
+            }
         }
         .floating-btn:hover { transform: scale(1.1); }
         .floating-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
@@ -995,7 +1012,7 @@
                         Four Simple Steps to a <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Perfect Roof</span>
                     </h2>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8" data-stagger-parent>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8" data-stagger-parent>
                     <div class="process-step" data-stagger-child data-reveal="fade-up">
                         <div class="step-num">1</div>
                         <div class="process-connector" aria-hidden="true"></div>
@@ -1094,11 +1111,11 @@
                     </h2>
                     <p style="color:var(--text-secondary)">Every project finished to the highest standard. Here's a look at some of our recent work.</p>
                 </div>
-                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4" data-stagger-parent>
-                    <div class="gallery-item col-span-2 lg:col-span-2 aspect-[2/1]" data-stagger-child data-reveal="fade-up"><img src="aerial-roof.jpg" alt="Aerial view of completed residential roof" loading="lazy" width="800" height="400"></div>
-                    <div class="gallery-item aspect-square" data-stagger-child data-reveal="fade-up"><img src="detail-tiles.jpg" alt="Close-up of expertly installed roof tiles" loading="lazy" width="400" height="400"></div>
-                    <div class="gallery-item aspect-square" data-stagger-child data-reveal="fade-up"><img src="inspection.jpg" alt="Professional roof inspection" loading="lazy" width="400" height="400"></div>
-                    <div class="gallery-item col-span-2 lg:col-span-2 aspect-[2/1]" data-stagger-child data-reveal="fade-up"><img src="home-dusk.jpg" alt="Beautiful home at dusk with new roof" loading="lazy" width="800" height="400"></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-stagger-parent>
+                    <div class="gallery-item sm:col-span-2 lg:col-span-2 aspect-[16/9] sm:aspect-[2/1]" data-stagger-child data-reveal="fade-up"><img src="aerial-roof.jpg" alt="Aerial view of completed residential roof" loading="lazy" width="800" height="400"></div>
+                    <div class="gallery-item aspect-[4/3] sm:aspect-square" data-stagger-child data-reveal="fade-up"><img src="detail-tiles.jpg" alt="Close-up of expertly installed roof tiles" loading="lazy" width="400" height="400"></div>
+                    <div class="gallery-item aspect-[4/3] sm:aspect-square" data-stagger-child data-reveal="fade-up"><img src="inspection.jpg" alt="Professional roof inspection" loading="lazy" width="400" height="400"></div>
+                    <div class="gallery-item sm:col-span-2 lg:col-span-2 aspect-[16/9] sm:aspect-[2/1]" data-stagger-child data-reveal="fade-up"><img src="home-dusk.jpg" alt="Beautiful home at dusk with new roof" loading="lazy" width="800" height="400"></div>
                 </div>
             </div>
         </section>
@@ -1240,7 +1257,7 @@
             </div>
             <div class="section-divider mb-8"></div>
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class="text-xs" style="color:var(--text-tertiary)">&copy; 2024 E J Roofing. All rights reserved.</p>
+                <p class="text-xs" style="color:var(--text-tertiary)">&copy; <script>document.write(new Date().getFullYear())</script> E J Roofing. All rights reserved.</p>
                 <p class="text-xs" style="color:var(--text-tertiary)">Website by <a href="https://www.aireyai.com" class="hover:text-brand-400 transition-colors" target="_blank" rel="noopener">AireyAI</a></p>
             </div>
         </div>
