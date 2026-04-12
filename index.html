@@ -238,6 +238,11 @@
             transition: opacity 1.5s ease;
         }
         .welcome-video.loaded { opacity: 1; }
+        .welcome-poster-fallback {
+            opacity: 1;
+            z-index: -1;
+        }
+        .welcome-poster-fallback.hidden { opacity: 0; }
         .welcome-overlay {
             position: absolute;
             inset: 0;
@@ -763,9 +768,10 @@
 
     <!-- ═══ WELCOME PAGE ═══ -->
     <div id="welcomePage" aria-label="Welcome to E J Roofing">
-        <video class="welcome-video" id="welcomeVideo" muted playsinline preload="auto" poster="aerial-roof.jpg">
+        <video class="welcome-video" id="welcomeVideo" autoplay muted playsinline preload="auto" poster="aerial-roof.jpg" webkit-playsinline>
             <source src="welcome-video.mp4" type="video/mp4">
         </video>
+        <img class="welcome-video welcome-poster-fallback" src="aerial-roof.jpg" alt="" aria-hidden="true" id="welcomePoster">
         <div class="welcome-overlay"></div>
         <div class="welcome-content">
             <svg class="welcome-logo-icon" viewBox="0 0 32 32" fill="none">
@@ -1256,15 +1262,33 @@
         (function() {
             const welcome = document.getElementById('welcomePage');
             const video = document.getElementById('welcomeVideo');
+            const poster = document.getElementById('welcomePoster');
             const progress = document.getElementById('welcomeProgress');
             const enterBtn = document.getElementById('welcomeEnter');
             let dismissed = false;
+            let videoPlaying = false;
 
             function dismissWelcome() {
                 if (dismissed) return;
                 dismissed = true;
                 welcome.classList.add('done');
                 document.body.style.overflow = '';
+                video.pause();
+            }
+
+            function tryPlay() {
+                if (videoPlaying) return;
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        videoPlaying = true;
+                        video.classList.add('loaded');
+                        poster.classList.add('hidden');
+                    }).catch(() => {
+                        // Autoplay blocked — show poster, that's fine
+                        poster.classList.add('loaded');
+                    });
+                }
             }
 
             // Prevent scrolling while welcome is visible
@@ -1276,14 +1300,23 @@
                     .forEach(el => el.classList.add('animate'));
             }, 300);
 
-            // Video loaded — fade it in and play
-            video.addEventListener('canplaythrough', () => {
-                video.classList.add('loaded');
-                video.play().catch(() => {});
-            }, { once: true });
+            // Attempt autoplay immediately
+            video.muted = true;
+            tryPlay();
 
-            // Start loading
-            video.load();
+            // Also try on these events as fallback triggers
+            video.addEventListener('loadeddata', tryPlay, { once: true });
+            video.addEventListener('canplay', tryPlay, { once: true });
+            video.addEventListener('canplaythrough', tryPlay, { once: true });
+
+            // On first user touch/click anywhere on welcome, try to play video
+            function onUserInteraction() {
+                tryPlay();
+                welcome.removeEventListener('touchstart', onUserInteraction);
+                welcome.removeEventListener('click', onUserInteraction);
+            }
+            welcome.addEventListener('touchstart', onUserInteraction, { passive: true });
+            welcome.addEventListener('click', onUserInteraction);
 
             // Update progress bar as video plays
             video.addEventListener('timeupdate', () => {
@@ -1300,11 +1333,14 @@
             });
 
             // Manual enter button
-            enterBtn.addEventListener('click', dismissWelcome);
+            enterBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dismissWelcome();
+            });
 
-            // Fallback: if video fails to load, dismiss after 4s
+            // Fallback: if video fails to load, poster is already showing
             video.addEventListener('error', () => {
-                setTimeout(dismissWelcome, 2000);
+                poster.classList.add('loaded');
             });
 
             // Safety fallback — dismiss after 15s no matter what
