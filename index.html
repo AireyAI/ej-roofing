@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E J Roofing — Professional Roofing Services You Can Trust</title>
+    <meta name="description" content="E J Roofing delivers expert roof installations, repairs, and maintenance. Over 20 years of trusted craftsmanship. Free quotes, fully insured, guaranteed work.">
+    <link rel="canonical" href="https://www.ejroofing.co.uk/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="E J Roofing — Professional Roofing Services You Can Trust">
+    <meta property="og:description" content="Expert roof installations, repairs, and maintenance. Over 20 years of trusted craftsmanship.">
+    <meta property="og:image" content="https://www.ejroofing.co.uk/og-image.jpg">
+    <meta property="og:url" content="https://www.ejroofing.co.uk/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="E J Roofing">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="E J Roofing — Professional Roofing Services">
+    <meta name="twitter:description" content="Expert roof installations, repairs, and maintenance. Over 20 years of trusted craftsmanship.">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0a0f1e">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "E J Roofing",
+        "description": "Professional roofing services including installations, repairs, flat roofing, and maintenance.",
+        "url": "https://www.ejroofing.co.uk",
+        "telephone": "+44 XXXX XXXXXX",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+        },
+        "priceRange": "££",
+        "image": "https://www.ejroofing.co.uk/og-image.jpg"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How long does a full roof replacement take?", "acceptedAnswer": {"@type": "Answer", "text": "Most residential roof replacements are completed within 3-5 working days, depending on the size and complexity of the roof."}},
+            {"@type": "Question", "name": "Do you offer free quotes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We provide free, no-obligation quotes for all roofing work. We'll visit your property, assess the work needed, and give you a clear, honest price."}},
+            {"@type": "Question", "name": "Are you fully insured?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. E J Roofing carries full public liability insurance and employer's liability insurance for complete peace of mind."}}
+        ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Clash Display', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#e8f0fe',
+                            100: '#c5d9fc',
+                            200: '#9ebff9',
+                            300: '#74a4f6',
+                            400: '#508ff3',
+                            500: '#2a7af0',
+                            600: '#1a5fc4',
+                            700: '#0f4497',
+                            800: '#072c6b',
+                            900: '#021640',
+                            950: '#010b22',
+                        },
+                        surface: {
+                            base: '#060a14',
+                            raised: '#0a0f1e',
+                            overlay: '#0f1628',
+                            card: '#111a30',
+                            border: 'rgba(42, 122, 240, 0.12)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ── CSS Custom Properties ── */
+        :root {
+            --color-primary: #2a7af0;
+            --color-primary-hover: #508ff3;
+            --color-primary-subtle: rgba(42, 122, 240, 0.08);
+            --color-primary-rgb: 42, 122, 240;
+            --color-accent: #06b6d4;
+
+            --surface-base: #060a14;
+            --surface-raised: #0a0f1e;
+            --surface-overlay: #0f1628;
+            --surface-card: #111a30;
+            --surface-border: rgba(42, 122, 240, 0.12);
+
+            --text-primary: #eef2ff;
+            --text-secondary: #8b9cc7;
+            --text-tertiary: #7a8db5;
+
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-snappy: cubic-bezier(0.23, 1, 0.32, 1);
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+            --tracking-tight: -0.04em;
+            --tracking-snug: -0.02em;
+        }
+
+        /* ── Base Reset ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--surface-base);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ── Noise Texture Overlay ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* ── Typography ── */
+        .font-display { font-family: 'Clash Display', sans-serif; }
+        .tracking-tight { letter-spacing: var(--tracking-tight); }
+        .tracking-snug { letter-spacing: var(--tracking-snug); }
+
+        /* ── Gradient Mesh Background ── */
+        .gradient-mesh {
+            background-color: var(--surface-base);
+            background-image:
+                radial-gradient(ellipse 80% 60% at 20% -10%, rgba(42, 122, 240, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 110%, rgba(6, 182, 212, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 50% 50%, rgba(42, 122, 240, 0.05) 0%, transparent 60%);
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(6, 10, 20, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid var(--surface-border);
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s var(--ease-snappy);
+        }
+        .nav.scrolled {
+            background: rgba(6, 10, 20, 0.92);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3), 0 1px 0 var(--surface-border);
+        }
+        .nav-link {
+            position: relative;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.2s var(--ease-snappy), background 0.2s var(--ease-snappy);
+        }
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: rgba(42, 122, 240, 0.08);
+        }
+
+        /* ── Buttons ── */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: var(--color-primary);
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s var(--ease-spring), box-shadow 0.2s var(--ease-snappy);
+            box-shadow:
+                0 2px 4px rgba(42, 122, 240, 0.3),
+                0 8px 24px rgba(42, 122, 240, 0.15),
+                inset 0 1px 0 rgba(255,255,255,0.15);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 4px 8px rgba(42, 122, 240, 0.4),
+                0 12px 32px rgba(42, 122, 240, 0.25),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        .btn-primary:active { transform: translateY(0); }
+        .btn-primary:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 3px;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: transparent;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(42, 122, 240, 0.25);
+            cursor: pointer;
+            transition: transform 0.2s var(--ease-spring), border-color 0.2s ease, background 0.2s ease;
+        }
+        .btn-ghost:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-primary);
+            background: rgba(42, 122, 240, 0.06);
+        }
+        .btn-ghost:active { transform: translateY(0); }
+        .btn-ghost:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 3px;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img, .hero-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(6,10,20,0.95) 0%, rgba(6,10,20,0.7) 40%, rgba(6,10,20,0.5) 100%),
+                linear-gradient(to top, rgba(6,10,20,1) 0%, transparent 40%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ── Cards ── */
+        .service-card {
+            background: var(--surface-card);
+            border: 1px solid var(--surface-border);
+            border-radius: 20px;
+            padding: 32px;
+            transition: transform 0.3s var(--ease-spring), box-shadow 0.3s var(--ease-snappy), border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(42, 122, 240, 0.25);
+            box-shadow:
+                0 4px 8px rgba(0,0,0,0.2),
+                0 16px 48px rgba(42, 122, 240, 0.1),
+                0 0 0 1px rgba(42, 122, 240, 0.08);
+        }
+        .service-card:hover::before { opacity: 1; }
+
+        .service-card .icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(42, 122, 240, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: background 0.3s ease, transform 0.3s var(--ease-spring);
+        }
+        .service-card:hover .icon-wrap {
+            background: rgba(42, 122, 240, 0.18);
+            transform: scale(1.05);
+        }
+
+        /* ── Stats ── */
+        .stat-card {
+            text-align: center;
+            padding: 32px 24px;
+        }
+        .stat-number {
+            font-family: 'Clash Display', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: var(--tracking-tight);
+            background: linear-gradient(135deg, #fff 0%, rgba(42, 122, 240, 0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        /* ── Testimonials ── */
+        .testimonial-card {
+            background: var(--surface-card);
+            border: 1px solid var(--surface-border);
+            border-radius: 20px;
+            padding: 32px;
+            position: relative;
+        }
+        .testimonial-card .quote-mark {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            font-size: 64px;
+            font-family: 'Clash Display', sans-serif;
+            color: rgba(42, 122, 240, 0.15);
+            line-height: 1;
+        }
+
+        /* ── Video Section ── */
+        .video-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .video-container {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--surface-border);
+            box-shadow: 0 24px 80px rgba(0,0,0,0.4), 0 0 60px rgba(42, 122, 240, 0.08);
+        }
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        /* ── Gallery ── */
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-out-quart);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(6,10,20,0.6) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* ── FAQ ── */
+        .faq-item {
+            border: 1px solid var(--surface-border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .faq-item:hover { border-color: rgba(42, 122, 240, 0.25); }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            cursor: pointer;
+            background: var(--surface-card);
+            transition: background 0.2s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .faq-question:hover { background: var(--surface-overlay); }
+        .faq-question:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: -2px;
+        }
+        .faq-chevron {
+            transition: transform 0.3s var(--ease-spring);
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+        .faq-item.active .faq-chevron { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--ease-out-quart), padding 0.3s ease;
+            padding: 0 24px;
+            background: var(--surface-card);
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 24px 20px;
+        }
+
+        /* ── Contact Form ── */
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--surface-overlay);
+            border: 1px solid var(--surface-border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+        }
+        .form-input::placeholder { color: var(--text-tertiary); }
+        .form-input:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(42, 122, 240, 0.15);
+        }
+
+        /* ── Section Divider ── */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--surface-border), transparent);
+        }
+
+        /* ── Scroll Progress ── */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            z-index: 101;
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+
+        /* ── Reduced Motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ── Mobile Nav ── */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 99;
+            background: rgba(6, 10, 20, 0.98);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-menu a {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .mobile-menu a:hover { color: var(--color-primary); }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 101;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links-desktop { display: none !important; }
+            .nav-cta-desktop { display: none !important; }
+        }
+
+        /* ── Stars Rating ── */
+        .stars { color: #facc15; letter-spacing: 2px; }
+    </style>
+</head>
+<body class="gradient-mesh">
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-brand-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Main navigation">
+        <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-display font-bold text-xl tracking-snug text-white flex items-center gap-2" aria-label="E J Roofing home">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <path d="M16 2L2 14h4v14h8v-8h4v8h8V14h4L16 2z" fill="currentColor" opacity="0.9"/>
+                    <path d="M16 2L2 14h4v14h8v-8h4v8h8V14h4L16 2z" fill="url(#roofGrad)" opacity="0.6"/>
+                    <defs><linearGradient id="roofGrad" x1="2" y1="2" x2="30" y2="30"><stop stop-color="#2a7af0"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+                </svg>
+                E J Roofing
+            </a>
+            <ul class="nav-links-desktop flex items-center gap-2 list-none" role="list">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="nav-cta-desktop flex items-center gap-3">
+                <a href="tel:+44XXXXXXXXXX" class="nav-link text-sm">Call Us</a>
+                <a href="#contact" class="btn-primary !py-2.5 !px-5 !text-sm !rounded-lg">Get Free Quote</a>
+            </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
+        <a href="#services" class="mobile-nav-link" tabindex="-1">Services</a>
+        <a href="#about" class="mobile-nav-link" tabindex="-1">About</a>
+        <a href="#gallery" class="mobile-nav-link" tabindex="-1">Gallery</a>
+        <a href="#testimonials" class="mobile-nav-link" tabindex="-1">Reviews</a>
+        <a href="#faq" class="mobile-nav-link" tabindex="-1">FAQ</a>
+        <a href="#contact" class="btn-primary mt-4" tabindex="-1">Get Free Quote</a>
+    </div>
+
+    <main id="main">
+        <!-- ═══════════════ HERO ═══════════════ -->
+        <section class="hero" aria-label="Hero">
+            <div class="hero-bg" aria-hidden="true">
+                <img src="hero-roofer.jpg" alt="" loading="eager" width="1920" height="1080">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content max-w-[1200px] mx-auto px-6 py-32 md:py-0">
+                <div class="max-w-2xl">
+                    <!-- Eyebrow -->
+                    <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/20 px-4 py-1.5 rounded-full mb-6" data-appear data-appear-delay="0">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        <span class="text-sm font-medium text-brand-300">Trusted Local Roofers — Over 20 Years Experience</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="font-display font-bold tracking-tight leading-[1.05] text-white mb-6" style="font-size: clamp(2.8rem, 6vw, 4.5rem);" data-split="words">
+                        Your Roof. <br><span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Built to Last.</span>
+                    </h1>
+
+                    <!-- Sub -->
+                    <p class="text-lg md:text-xl leading-relaxed mb-8 max-w-xl" style="color: var(--text-secondary);" data-appear data-appear-delay="0.3">
+                        Expert installations, repairs, and maintenance from a family-run team that takes pride in every tile. Fully insured, fully guaranteed.
+                    </p>
+
+                    <!-- CTA Group -->
+                    <div class="flex flex-wrap gap-4 mb-6" data-appear data-appear-delay="0.5">
+                        <a href="#contact" class="btn-primary" data-magnetic>
+                            Get Your Free Quote
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#services" class="btn-ghost" data-magnetic>Our Services</a>
+                    </div>
+
+                    <!-- Trust -->
+                    <p class="text-sm" style="color: var(--text-tertiary);" data-appear data-appear-delay="0.7">
+                        Free no-obligation quotes · Fully insured · Work guaranteed
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ STATS BAR ═══════════════ -->
+        <section class="relative z-10 -mt-16" aria-label="Key statistics">
+            <div class="max-w-[1100px] mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-surface-border bg-surface-border" data-stagger-parent data-reveal="fade-up">
+                    <div class="stat-card bg-surface-card" data-stagger-child>
+                        <div class="stat-number" data-counter="20" data-counter-suffix="+">0</div>
+                        <p class="text-sm mt-2" style="color: var(--text-secondary);">Years Experience</p>
+                    </div>
+                    <div class="stat-card bg-surface-card" data-stagger-child>
+                        <div class="stat-number" data-counter="2500" data-counter-suffix="+">0</div>
+                        <p class="text-sm mt-2" style="color: var(--text-secondary);">Roofs Completed</p>
+                    </div>
+                    <div class="stat-card bg-surface-card" data-stagger-child>
+                        <div class="stat-number" data-counter="100" data-counter-suffix="%">0</div>
+                        <p class="text-sm mt-2" style="color: var(--text-secondary);">Fully Insured</p>
+                    </div>
+                    <div class="stat-card bg-surface-card" data-stagger-child>
+                        <div class="stat-number flex items-center justify-center gap-1"><span data-counter="4" data-counter-suffix=".9">0</span><span class="text-2xl">★</span></div>
+                        <p class="text-sm mt-2" style="color: var(--text-secondary);">Google Rating</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ SERVICES ═══════════════ -->
+        <section id="services" class="py-24 md:py-32" aria-label="Our services">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <!-- Section Header -->
+                <div class="text-center max-w-2xl mx-auto mb-16" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">What We Do</p>
+                    <h2 class="font-display font-bold tracking-tight text-white mb-4" style="font-size: clamp(2rem, 4vw, 3rem);">
+                        Roofing Services That <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Stand the Test of Time</span>
+                    </h2>
+                    <p style="color: var(--text-secondary);">From a single tile repair to a complete new roof — we handle it all with the same attention to detail.</p>
+                </div>
+
+                <!-- Service Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger-parent>
+                    <!-- Service 1 -->
+                    <div class="service-card" data-stagger-child data-tilt>
+                        <div class="icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-white mb-2">New Roof Installations</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Complete pitched and flat roof installations using premium materials. Built to withstand decades of British weather.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card" data-stagger-child data-tilt>
+                        <div class="icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-white mb-2">Roof Repairs</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Leaks, missing tiles, storm damage — we diagnose and fix fast. Emergency call-outs available when you need us most.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card" data-stagger-child data-tilt>
+                        <div class="icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/></svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-white mb-2">Flat Roofing</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">GRP fibreglass, EPDM rubber, and felt flat roofing. Watertight solutions for extensions, garages, and commercial buildings.</p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card" data-stagger-child data-tilt>
+                        <div class="icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-white mb-2">Guttering & Fascias</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">New gutters, soffits, and fascia boards. uPVC and aluminium options to protect your home and keep it looking sharp.</p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-card" data-stagger-child data-tilt>
+                        <div class="icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-white mb-2">Roof Inspections</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Detailed surveys with honest assessments. We'll tell you exactly what needs doing — and what doesn't.</p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="service-card" data-stagger-child data-tilt>
+                        <div class="icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-white mb-2">Chimney Work</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Repointing, lead flashing, chimney stack repairs, and removals. We keep the elements out and your home safe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ ABOUT / VIDEO ═══════════════ -->
+        <section id="about" class="py-24 md:py-32 video-section" aria-label="About E J Roofing">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Content -->
+                    <div data-reveal="fade-right">
+                        <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">About Us</p>
+                        <h2 class="font-display font-bold tracking-tight text-white mb-6" style="font-size: clamp(2rem, 4vw, 2.8rem);">
+                            A Family Business <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Built on Trust</span>
+                        </h2>
+                        <p class="mb-4 leading-relaxed" style="color: var(--text-secondary);">
+                            E J Roofing is a family-run roofing company with over 20 years of experience serving homes and businesses across the region. We started with one van and a commitment to doing the job right — that hasn't changed.
+                        </p>
+                        <p class="mb-6 leading-relaxed" style="color: var(--text-secondary);">
+                            Every roof we build carries our name. That's why we use only premium materials, employ time-served tradespeople, and stand behind every job with a written guarantee.
+                        </p>
+
+                        <!-- Trust Points -->
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/15 flex items-center justify-center flex-shrink-0">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 4" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <span class="text-sm" style="color: var(--text-secondary);">Fully insured with public liability cover</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/15 flex items-center justify-center flex-shrink-0">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 4" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <span class="text-sm" style="color: var(--text-secondary);">Written guarantees on all work</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/15 flex items-center justify-center flex-shrink-0">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 4" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <span class="text-sm" style="color: var(--text-secondary);">Free, honest quotes with no pressure</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/15 flex items-center justify-center flex-shrink-0">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 4" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <span class="text-sm" style="color: var(--text-secondary);">Premium materials from leading suppliers</span>
+                            </li>
+                        </ul>
+
+                        <a href="#contact" class="btn-primary" data-magnetic>
+                            Talk to Our Team
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Video -->
+                    <div data-reveal="fade-left">
+                        <div class="video-container" id="videoContainer">
+                            <video autoplay muted loop playsinline poster="aerial-roof.jpg" preload="metadata" id="promoVideo">
+                                <source src="ej-roofing-promo.mp4" type="video/mp4">
+                            </video>
+                            <!-- Fallback image if no video -->
+                            <img src="aerial-roof.jpg" alt="Aerial view of a completed residential roof" class="video-fallback hidden w-full" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ GALLERY ═══════════════ -->
+        <section id="gallery" class="py-24 md:py-32" aria-label="Project gallery">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Our Work</p>
+                    <h2 class="font-display font-bold tracking-tight text-white mb-4" style="font-size: clamp(2rem, 4vw, 3rem);">
+                        Quality You Can <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">See for Yourself</span>
+                    </h2>
+                    <p style="color: var(--text-secondary);">Every project finished to the highest standard. Here's a look at some of our recent work.</p>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4" data-stagger-parent>
+                    <div class="gallery-item col-span-2 lg:col-span-2 aspect-[2/1]" data-stagger-child data-reveal="fade-up">
+                        <img src="aerial-roof.jpg" alt="Aerial view of completed residential roof" loading="lazy" width="800" height="400">
+                    </div>
+                    <div class="gallery-item aspect-square" data-stagger-child data-reveal="fade-up">
+                        <img src="detail-tiles.jpg" alt="Close-up of expertly installed roof tiles" loading="lazy" width="400" height="400">
+                    </div>
+                    <div class="gallery-item aspect-square" data-stagger-child data-reveal="fade-up">
+                        <img src="inspection.jpg" alt="Professional roof inspection" loading="lazy" width="400" height="400">
+                    </div>
+                    <div class="gallery-item col-span-2 lg:col-span-2 aspect-[2/1]" data-stagger-child data-reveal="fade-up">
+                        <img src="home-dusk.jpg" alt="Beautiful home at dusk with new roof" loading="lazy" width="800" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+        <section id="testimonials" class="py-24 md:py-32" aria-label="Customer reviews">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Reviews</p>
+                    <h2 class="font-display font-bold tracking-tight text-white mb-4" style="font-size: clamp(2rem, 4vw, 3rem);">
+                        What Our <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Customers Say</span>
+                    </h2>
+                    <p style="color: var(--text-secondary);">Don't just take our word for it — hear from the homeowners we've helped.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6" data-stagger-parent>
+                    <div class="testimonial-card" data-stagger-child data-reveal="fade-up" data-tilt>
+                        <div class="quote-mark" aria-hidden="true">"</div>
+                        <div class="stars text-sm mb-4 pt-2">★★★★★</div>
+                        <p class="text-sm leading-relaxed mb-6" style="color: var(--text-secondary);">"Absolutely brilliant job. The team arrived on time, kept the site clean, and the new roof looks fantastic. Wouldn't hesitate to recommend E J Roofing to anyone."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">JW</div>
+                            <div>
+                                <p class="text-sm font-semibold text-white">James Watson</p>
+                                <p class="text-xs" style="color: var(--text-tertiary);">Full roof replacement</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-stagger-child data-reveal="fade-up" data-tilt>
+                        <div class="quote-mark" aria-hidden="true">"</div>
+                        <div class="stars text-sm mb-4 pt-2">★★★★★</div>
+                        <p class="text-sm leading-relaxed mb-6" style="color: var(--text-secondary);">"Had a leak that two other roofers couldn't find. E J Roofing diagnosed it in 20 minutes, fixed it the same day, and it hasn't leaked since. Proper tradespeople."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">SP</div>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Sarah Pearson</p>
+                                <p class="text-xs" style="color: var(--text-tertiary);">Emergency leak repair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-stagger-child data-reveal="fade-up" data-tilt>
+                        <div class="quote-mark" aria-hidden="true">"</div>
+                        <div class="stars text-sm mb-4 pt-2">★★★★★</div>
+                        <p class="text-sm leading-relaxed mb-6" style="color: var(--text-secondary);">"They did the flat roof on our extension and the guttering right round the house. Fair price, quality work, and they even cleaned up before they left. Can't ask for more."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">MT</div>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Mark Thompson</p>
+                                <p class="text-xs" style="color: var(--text-tertiary);">Flat roof & guttering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ FAQ ═══════════════ -->
+        <section id="faq" class="py-24 md:py-32" aria-label="Frequently asked questions">
+            <div class="max-w-[800px] mx-auto px-6">
+                <div class="text-center mb-16" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">FAQ</p>
+                    <h2 class="font-display font-bold tracking-tight text-white mb-4" style="font-size: clamp(2rem, 4vw, 3rem);">
+                        Common <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Questions</span>
+                    </h2>
+                </div>
+
+                <div class="space-y-3" data-stagger-parent>
+                    <div class="faq-item" data-stagger-child data-reveal="fade-up">
+                        <button class="faq-question" aria-expanded="false">
+                            How long does a full roof replacement take?
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Most residential roof replacements are completed within 3–5 working days, depending on the size and complexity of the roof. We'll give you a clear timeline before work starts.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-stagger-child data-reveal="fade-up">
+                        <button class="faq-question" aria-expanded="false">
+                            Do you offer free quotes?
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Yes. We provide free, no-obligation quotes for all roofing work. We'll visit your property, assess the work needed, and give you a clear, honest price — no hidden costs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-stagger-child data-reveal="fade-up">
+                        <button class="faq-question" aria-expanded="false">
+                            Are you fully insured?
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Absolutely. E J Roofing carries full public liability insurance and employer's liability insurance. We're happy to provide proof of cover on request.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-stagger-child data-reveal="fade-up">
+                        <button class="faq-question" aria-expanded="false">
+                            What areas do you cover?
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">We cover a wide area across the region. Get in touch and we'll let you know — we're often happy to travel for larger projects.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-stagger-child data-reveal="fade-up">
+                        <button class="faq-question" aria-expanded="false">
+                            Do you handle emergency repairs?
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Yes, we offer emergency call-outs for urgent issues like storm damage or active leaks. Call us and we'll do our best to be with you the same day.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-stagger-child data-reveal="fade-up">
+                        <button class="faq-question" aria-expanded="false">
+                            What guarantee do you offer?
+                            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">All our work comes with a written guarantee. The length depends on the job — typically 10–20 years for new roof installations, and we'll explain exactly what's covered before you commit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ CONTACT / CTA ═══════════════ -->
+        <section id="contact" class="py-24 md:py-32 relative" aria-label="Get a free quote">
+            <!-- Background glow -->
+            <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-500/8 rounded-full blur-[120px]"></div>
+            </div>
+
+            <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                    <!-- CTA Content -->
+                    <div data-reveal="fade-right">
+                        <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Get in Touch</p>
+                        <h2 class="font-display font-bold tracking-tight text-white mb-6" style="font-size: clamp(2rem, 4vw, 2.8rem);">
+                            Ready for a Roof <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">You Can Rely On?</span>
+                        </h2>
+                        <p class="mb-8 leading-relaxed" style="color: var(--text-secondary);">
+                            Get your free, no-obligation quote today. Fill in the form or give us a call — we'll get back to you within 24 hours.
+                        </p>
+
+                        <!-- Contact Details -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/15 flex items-center justify-center flex-shrink-0">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase tracking-wider mb-0.5" style="color: var(--text-tertiary);">Phone</p>
+                                    <a href="tel:+44XXXXXXXXXX" class="text-white font-semibold hover:text-brand-400 transition-colors">Call Us Today</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/15 flex items-center justify-center flex-shrink-0">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase tracking-wider mb-0.5" style="color: var(--text-tertiary);">Email</p>
+                                    <a href="mailto:info@ejroofing.co.uk" class="text-white font-semibold hover:text-brand-400 transition-colors">info@ejroofing.co.uk</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/15 flex items-center justify-center flex-shrink-0">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase tracking-wider mb-0.5" style="color: var(--text-tertiary);">Hours</p>
+                                    <p class="text-white font-semibold">Mon–Sat: 7am – 6pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div data-reveal="fade-left">
+                        <form class="p-8 rounded-2xl border border-surface-border bg-surface-card/80 backdrop-blur-sm" id="contactForm" novalidate>
+                            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-white mb-2">Your Name</label>
+                                    <input type="text" id="name" name="name" required autocomplete="name" placeholder="John Smith" class="form-input" aria-required="true">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-white mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="07XXX XXXXXX" inputmode="tel" class="form-input" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-white mb-2">Email</label>
+                                <input type="email" id="email" name="email" required autocomplete="email" placeholder="john@example.com" inputmode="email" class="form-input" aria-required="true">
+                            </div>
+                            <div class="mb-4">
+                                <label for="service" class="block text-sm font-medium text-white mb-2">Service Needed</label>
+                                <select id="service" name="service" class="form-input" style="appearance: none; background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22%3E%3Cpath d=%22M2 4l4 4 4-4%22 stroke=%22%235a6a8f%22 stroke-width=%222%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 16px center;">
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="new-roof">New Roof Installation</option>
+                                    <option value="repair">Roof Repair</option>
+                                    <option value="flat-roof">Flat Roofing</option>
+                                    <option value="guttering">Guttering & Fascias</option>
+                                    <option value="inspection">Roof Inspection</option>
+                                    <option value="chimney">Chimney Work</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-white mb-2">Tell Us About Your Project</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Describe the work you need..." class="form-input resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full" data-magnetic>
+                                Get My Free Quote
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                            <p class="text-xs text-center mt-3" style="color: var(--text-tertiary);">We'll respond within 24 hours. No spam, ever.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="border-t border-surface-border py-12" aria-label="Footer">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <a href="#" class="font-display font-bold text-lg text-white flex items-center gap-2 mb-4">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                            <path d="M16 2L2 14h4v14h8v-8h4v8h8V14h4L16 2z" fill="currentColor" opacity="0.9"/>
+                            <path d="M16 2L2 14h4v14h8v-8h4v8h8V14h4L16 2z" fill="url(#roofGrad2)" opacity="0.6"/>
+                            <defs><linearGradient id="roofGrad2" x1="2" y1="2" x2="30" y2="30"><stop stop-color="#2a7af0"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+                        </svg>
+                        E J Roofing
+                    </a>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">Professional roofing services with over 20 years of trusted craftsmanship. Fully insured, fully guaranteed.</p>
+                </div>
+                <div>
+                    <h3 class="font-display font-semibold text-white mb-4 text-base">Services</h3>
+                    <ul class="space-y-2 list-none">
+                        <li><a href="#services" class="text-sm hover:text-brand-400 transition-colors" style="color: var(--text-secondary);">New Roof Installations</a></li>
+                        <li><a href="#services" class="text-sm hover:text-brand-400 transition-colors" style="color: var(--text-secondary);">Roof Repairs</a></li>
+                        <li><a href="#services" class="text-sm hover:text-brand-400 transition-colors" style="color: var(--text-secondary);">Flat Roofing</a></li>
+                        <li><a href="#services" class="text-sm hover:text-brand-400 transition-colors" style="color: var(--text-secondary);">Guttering & Fascias</a></li>
+                        <li><a href="#services" class="text-sm hover:text-brand-400 transition-colors" style="color: var(--text-secondary);">Chimney Work</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-display font-semibold text-white mb-4 text-base">Contact</h3>
+                    <ul class="space-y-2 list-none">
+                        <li><a href="tel:+44XXXXXXXXXX" class="text-sm hover:text-brand-400 transition-colors" style="color: var(--text-secondary);">Call Us</a></li>
+                        <li><a href="mailto:info@ejroofing.co.uk" class="text-sm hover:text-brand-400 transition-colors" style="color: var(--text-secondary);">info@ejroofing.co.uk</a></li>
+                        <li><p class="text-sm" style="color: var(--text-secondary);">Mon–Sat: 7am – 6pm</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-divider mb-8"></div>
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs" style="color: var(--text-tertiary);">&copy; 2024 E J Roofing. All rights reserved.</p>
+                <p class="text-xs" style="color: var(--text-tertiary);">Website by <a href="https://www.aireyai.com" class="hover:text-brand-400 transition-colors" target="_blank" rel="noopener">AireyAI</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ SCRIPTS ═══════════════ -->
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- AireyAI Animation Toolkit -->
+    <script src="animations.js"></script>
+
+    <script>
+        // ── Navigation ──
+        let lastScroll = 0;
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            const current = window.scrollY;
+            nav.classList.toggle('scrolled', current > 20);
+            if (current > 80) {
+                nav.style.transform = current > lastScroll ? 'translateY(-100%)' : 'translateY(0)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScroll = current;
+        }, { passive: true });
+
+        // ── Scroll Progress ──
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+            scrollProgress.style.transform = `scaleX(${progress})`;
+        }, { passive: true });
+
+        // ── Mobile Menu ──
+        const hamburger = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        function toggleMobileMenu(open) {
+            mobileMenu.classList.toggle('open', open);
+            hamburger.classList.toggle('active', open);
+            hamburger.setAttribute('aria-expanded', open);
+            mobileMenu.setAttribute('aria-hidden', !open);
+            if (open) { mobileMenu.removeAttribute('inert'); } else { mobileMenu.setAttribute('inert', ''); }
+            mobileMenu.querySelectorAll('a').forEach(a => a.setAttribute('tabindex', open ? '0' : '-1'));
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+        hamburger.addEventListener('click', () => {
+            toggleMobileMenu(!mobileMenu.classList.contains('open'));
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+
+        // ── FAQ Accordion ──
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                // Close all
+                document.querySelectorAll('.faq-item.active').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ── Contact Form ──
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<svg class="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.3"/><path d="M12 2a10 10 0 019.95 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg> Sending...';
+            btn.disabled = true;
+            // Simulate send
+            setTimeout(() => {
+                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Quote Requested!';
+                btn.style.background = '#059669';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                    this.reset();
+                }, 3000);
+            }, 1500);
+        });
+
+        // ── Video Fallback ──
+        const video = document.getElementById('promoVideo');
+        if (video) {
+            video.addEventListener('error', () => {
+                video.style.display = 'none';
+                const fallback = document.querySelector('.video-fallback');
+                if (fallback) fallback.classList.remove('hidden');
+            });
+        }
+
+        // ── Smooth Scroll for Anchor Links ──
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
