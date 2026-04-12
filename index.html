@@ -175,6 +175,9 @@
         /* ── Base Reset ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        html {
+            overflow-x: hidden;
+        }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--surface-base);
@@ -235,14 +238,15 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            transition: opacity 1.5s ease;
+            transition: opacity 1s ease;
+            z-index: 0;
         }
-        .welcome-video.loaded { opacity: 1; }
+        .welcome-video.loaded { opacity: 1; z-index: 1; }
         .welcome-poster-fallback {
             opacity: 1;
-            z-index: -1;
+            z-index: 0;
         }
-        .welcome-poster-fallback.hidden { opacity: 0; }
+        .welcome-poster-fallback.hidden { opacity: 0; transition: opacity 1s ease; }
         .welcome-overlay {
             position: absolute;
             inset: 0;
@@ -287,7 +291,7 @@
             text-shadow: 0 4px 40px rgba(0,0,0,0.5);
         }
         .welcome-title.animate {
-            animation: welcomeFadeUp 1s var(--ease-out-quart) 0.2s forwards;
+            animation: welcomeFadeUp 0.8s var(--ease-out-quart) 0.15s forwards;
         }
         .welcome-tagline {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -300,7 +304,7 @@
             transform: translateY(20px);
         }
         .welcome-tagline.animate {
-            animation: welcomeFadeUp 0.8s var(--ease-out-quart) 0.5s forwards;
+            animation: welcomeFadeUp 0.8s var(--ease-out-quart) 0.3s forwards;
         }
         .welcome-line {
             width: 60px;
@@ -311,7 +315,7 @@
             transform: scaleX(0);
         }
         .welcome-line.animate {
-            animation: welcomeLineGrow 0.8s var(--ease-out-quart) 0.7s forwards;
+            animation: welcomeLineGrow 0.8s var(--ease-out-quart) 0.45s forwards;
         }
         .welcome-enter {
             margin-top: 16px;
@@ -334,7 +338,7 @@
             overflow: hidden;
         }
         .welcome-enter.animate {
-            animation: welcomeFadeUp 0.8s var(--ease-out-quart) 1s forwards;
+            animation: welcomeFadeUp 0.8s var(--ease-out-quart) 0.6s forwards;
         }
         .welcome-enter:hover {
             transform: translateY(-2px) scale(1.04);
@@ -364,7 +368,7 @@
             opacity: 0;
         }
         .welcome-bottom.animate {
-            animation: welcomeFadeUp 0.8s var(--ease-out-quart) 1.4s forwards;
+            animation: welcomeFadeUp 0.8s var(--ease-out-quart) 0.9s forwards;
         }
         .welcome-scroll-text {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -801,10 +805,10 @@
             <p class="welcome-tagline">Built to Last</p>
             <button class="welcome-enter" id="welcomeEnter" aria-label="Enter site">Explore Our Work</button>
         </div>
-        <div class="welcome-bottom">
-            <span class="welcome-scroll-text">or wait for video</span>
+        <button class="welcome-bottom" id="welcomeSkip" aria-label="Skip intro" style="background:none;border:none;cursor:pointer;">
+            <span class="welcome-scroll-text">Skip Intro</span>
             <svg class="welcome-scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        </div>
+        </button>
         <div class="welcome-progress" id="welcomeProgress"></div>
     </div>
 
@@ -1188,7 +1192,7 @@
 
         <!-- ═══════════════ CONTACT ═══════════════ -->
         <section id="contact" class="py-24 md:py-32 relative" aria-label="Get a free quote">
-            <div class="absolute inset-0 pointer-events-none" aria-hidden="true"><div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full blur-[120px]" style="background:rgba(42,122,240,0.06)"></div></div>
+            <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true"><div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full blur-[120px]" style="background:rgba(42,122,240,0.06)"></div></div>
             <div class="max-w-[1200px] mx-auto px-6 relative z-10">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
                     <div data-reveal="fade-right">
@@ -1311,11 +1315,16 @@
             // Prevent scrolling while welcome is visible
             document.body.style.overflow = 'hidden';
 
-            // Animate content in after short delay
+            // Animate content in immediately
             setTimeout(() => {
                 document.querySelectorAll('.welcome-logo-icon, .welcome-title, .welcome-line, .welcome-tagline, .welcome-enter, .welcome-bottom')
                     .forEach(el => el.classList.add('animate'));
-            }, 300);
+            }, 100);
+
+            // Skip intro button
+            const skipBtn = document.getElementById('welcomeSkip');
+            skipBtn.addEventListener('click', (e) => { e.stopPropagation(); dismissWelcome(); });
+            skipBtn.addEventListener('touchend', (e) => { e.preventDefault(); e.stopPropagation(); dismissWelcome(); }, { passive: false });
 
             // Attempt autoplay immediately
             video.muted = true;
@@ -1360,8 +1369,8 @@
                 poster.classList.add('loaded');
             });
 
-            // Safety fallback — dismiss after 15s no matter what
-            setTimeout(() => { if (!dismissed) dismissWelcome(); }, 15000);
+            // Safety fallback — dismiss after 10s no matter what
+            setTimeout(() => { if (!dismissed) dismissWelcome(); }, 10000);
         })();
 
         // ══════════════════════════════════════════
