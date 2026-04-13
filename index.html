@@ -929,6 +929,226 @@
             min-height: 44px; line-height: 1.5;
         }
         .area-tag:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+        /* ══════════════════════════════════════════
+           FINANCING SECTION
+           ══════════════════════════════════════════ */
+        .finance-card {
+            padding: 32px; border-radius: 20px; border: 1px solid var(--surface-border);
+            background: var(--surface-card); text-align: center;
+            transition: border-color 0.3s ease, transform 0.3s var(--ease-spring);
+        }
+        .finance-card:hover { border-color: rgba(42,122,240,0.3); transform: translateY(-4px); }
+        .finance-big { font-family: 'Clash Display', sans-serif; font-size: 48px; font-weight: 700; color: var(--text-primary); line-height: 1; }
+        .finance-slider-wrap { position: relative; margin: 24px 0 8px; }
+        .finance-range { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: var(--surface-overlay); outline: none; }
+        .finance-range::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); cursor: pointer; border: 3px solid var(--surface-card); box-shadow: 0 2px 8px rgba(42,122,240,0.4); }
+        .finance-range::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); cursor: pointer; border: 3px solid var(--surface-card); }
+
+        /* ══════════════════════════════════════════
+           MATERIALS COMPARISON TABLE
+           ══════════════════════════════════════════ */
+        .mat-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--surface-border); }
+        .mat-table th { padding: 16px; text-align: left; font-family: 'Clash Display', sans-serif; font-weight: 600; font-size: 14px; color: var(--text-primary); background: var(--surface-overlay); border-bottom: 1px solid var(--surface-border); }
+        .mat-table td { padding: 14px 16px; font-size: 14px; color: var(--text-secondary); border-bottom: 1px solid var(--surface-border); background: var(--surface-card); transition: background 0.2s ease; }
+        .mat-table tr:last-child td { border-bottom: none; }
+        .mat-table tbody tr:hover td { background: var(--surface-overlay); }
+        .mat-table .mat-best { background: rgba(42,122,240,0.08); }
+        .mat-table .mat-bar { height: 6px; border-radius: 3px; background: var(--surface-overlay); overflow: hidden; min-width: 80px; }
+        .mat-table .mat-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--color-primary), var(--color-accent)); }
+        .mat-tab { padding: 10px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; border: 1px solid var(--surface-border); background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease; min-height: 44px; }
+        .mat-tab.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+
+        /* ══════════════════════════════════════════
+           INSURANCE CLAIM GUIDE
+           ══════════════════════════════════════════ */
+        .ins-step {
+            display: flex; gap: 20px; padding: 24px; border-radius: 16px;
+            border: 1px solid var(--surface-border); background: var(--surface-card);
+            transition: border-color 0.3s ease, transform 0.3s var(--ease-spring);
+        }
+        .ins-step:hover { border-color: rgba(42,122,240,0.3); transform: translateY(-2px); }
+        .ins-step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); color: #fff; font-family: 'Clash Display', sans-serif; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+
+        /* ══════════════════════════════════════════
+           TEAM PROFILES
+           ══════════════════════════════════════════ */
+        .team-card {
+            border-radius: 20px; overflow: hidden; border: 1px solid var(--surface-border);
+            background: var(--surface-card); transition: border-color 0.3s ease, transform 0.3s var(--ease-spring);
+        }
+        .team-card:hover { border-color: rgba(42,122,240,0.3); transform: translateY(-4px); }
+        .team-card-img { aspect-ratio: 1; overflow: hidden; }
+        .team-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .team-card:hover .team-card-img img { transform: scale(1.05); }
+        .team-card-body { padding: 20px; text-align: center; }
+
+        /* ══════════════════════════════════════════
+           CUSTOMER JOURNEY TIMELINE
+           ══════════════════════════════════════════ */
+        .journey-line {
+            position: relative; padding-left: 48px;
+        }
+        .journey-line::before {
+            content: ''; position: absolute; left: 19px; top: 0; bottom: 0; width: 2px;
+            background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+        }
+        .journey-step {
+            position: relative; padding: 20px 24px; margin-bottom: 24px; border-radius: 16px;
+            border: 1px solid var(--surface-border); background: var(--surface-card);
+            transition: border-color 0.3s ease;
+        }
+        .journey-step:hover { border-color: rgba(42,122,240,0.3); }
+        .journey-step::before {
+            content: ''; position: absolute; left: -37px; top: 24px; width: 14px; height: 14px;
+            border-radius: 50%; background: var(--color-primary); border: 3px solid var(--surface-base);
+            box-shadow: 0 0 0 2px var(--color-primary);
+        }
+        .journey-step:last-child { margin-bottom: 0; }
+
+        /* ══════════════════════════════════════════
+           VIDEO TESTIMONIALS
+           ══════════════════════════════════════════ */
+        .vid-testimonial {
+            position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9;
+            border: 1px solid var(--surface-border); cursor: pointer;
+            transition: border-color 0.3s ease, transform 0.3s var(--ease-spring);
+        }
+        .vid-testimonial:hover { border-color: rgba(42,122,240,0.3); transform: translateY(-4px); }
+        .vid-testimonial video { width: 100%; height: 100%; object-fit: cover; }
+        .vid-testimonial .vid-play {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            background: rgba(0,0,0,0.3); transition: background 0.3s ease;
+        }
+        .vid-testimonial:hover .vid-play { background: rgba(0,0,0,0.15); }
+        .vid-play-btn {
+            width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.95);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.3s var(--ease-spring);
+        }
+        .vid-testimonial:hover .vid-play-btn { transform: scale(1.1); }
+
+        /* ══════════════════════════════════════════
+           WEATHER WIDGET
+           ══════════════════════════════════════════ */
+        .weather-widget {
+            display: flex; align-items: center; gap: 16px; padding: 16px 24px;
+            border-radius: 50px; border: 1px solid var(--surface-border);
+            background: var(--surface-card); max-width: fit-content; margin: 0 auto;
+            transition: border-color 0.3s ease;
+        }
+        .weather-widget:hover { border-color: rgba(42,122,240,0.2); }
+        .weather-icon { font-size: 28px; }
+        .weather-temp { font-family: 'Clash Display', sans-serif; font-weight: 700; font-size: 20px; color: var(--text-primary); }
+        .weather-desc { font-size: 13px; color: var(--text-secondary); }
+        .weather-cta { font-size: 13px; font-weight: 600; color: var(--color-primary); }
+
+        /* ══════════════════════════════════════════
+           CERTIFICATIONS CAROUSEL
+           ══════════════════════════════════════════ */
+        .cert-strip { display: flex; gap: 32px; align-items: center; overflow: hidden; position: relative; }
+        .cert-track {
+            display: flex; gap: 48px; align-items: center; animation: certScroll 25s linear infinite;
+            will-change: transform;
+        }
+        @media (prefers-reduced-motion: reduce) { .cert-track { animation: none; flex-wrap: wrap; justify-content: center; } }
+        @keyframes certScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .cert-item {
+            flex-shrink: 0; display: flex; align-items: center; gap: 12px; padding: 12px 24px;
+            border-radius: 12px; border: 1px solid var(--surface-border); background: var(--surface-card);
+            white-space: nowrap; font-size: 14px; font-weight: 600; color: var(--text-primary);
+        }
+        .cert-icon { font-size: 24px; }
+
+        /* ══════════════════════════════════════════
+           SEASONAL PROMO BANNER
+           ══════════════════════════════════════════ */
+        .promo-banner {
+            background: linear-gradient(135deg, rgba(42,122,240,0.12), rgba(6,182,212,0.08));
+            border: 1px solid rgba(42,122,240,0.2); border-radius: 16px;
+            padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            flex-wrap: wrap;
+        }
+        .promo-badge {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: #fff; padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
+        /* ══════════════════════════════════════════
+           NEWSLETTER SIGNUP
+           ══════════════════════════════════════════ */
+        .nl-form {
+            display: flex; gap: 12px; max-width: 480px; margin: 0 auto;
+        }
+        .nl-form input {
+            flex: 1; padding: 14px 20px; border-radius: 50px; border: 1px solid var(--surface-border);
+            background: var(--surface-overlay); color: var(--text-primary); font-size: 16px;
+            font-family: 'Plus Jakarta Sans', sans-serif; outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .nl-form input:focus { border-color: var(--color-primary); }
+        .nl-form input::placeholder { color: var(--text-tertiary); }
+        .nl-form button {
+            padding: 14px 28px; border-radius: 50px; border: none; background: var(--color-primary);
+            color: #fff; font-weight: 700; font-size: 14px; cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s var(--ease-spring);
+            white-space: nowrap; min-height: 44px;
+        }
+        .nl-form button:hover { background: var(--color-primary-hover); transform: scale(1.03); }
+        @media (max-width: 480px) { .nl-form { flex-direction: column; } .nl-form button { width: 100%; } }
+
+        /* ══════════════════════════════════════════
+           3D ROOF MODEL
+           ══════════════════════════════════════════ */
+        .roof3d-container {
+            width: 100%; aspect-ratio: 16/9; border-radius: 20px; overflow: hidden;
+            border: 1px solid var(--surface-border); background: var(--surface-card);
+            position: relative; cursor: grab;
+        }
+        .roof3d-container:active { cursor: grabbing; }
+        .roof3d-container canvas { width: 100% !important; height: 100% !important; display: block; }
+        .roof3d-label {
+            position: absolute; padding: 8px 16px; border-radius: 8px;
+            background: rgba(0,0,0,0.8); color: #fff; font-size: 13px; font-weight: 600;
+            pointer-events: none; transform: translate(-50%, -100%); margin-top: -12px;
+            opacity: 0; transition: opacity 0.2s ease; white-space: nowrap;
+        }
+        .roof3d-label.visible { opacity: 1; }
+        .roof3d-hotspot {
+            position: absolute; width: 20px; height: 20px; border-radius: 50%;
+            background: var(--color-primary); border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3); cursor: pointer;
+            transform: translate(-50%, -50%); z-index: 2;
+            animation: hotspotPulse 2s ease-in-out infinite;
+        }
+        @keyframes hotspotPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(42,122,240,0.4); } 50% { box-shadow: 0 0 0 8px rgba(42,122,240,0); } }
+
+        /* ══════════════════════════════════════════
+           SOUND TOGGLE
+           ══════════════════════════════════════════ */
+        .sound-toggle {
+            position: fixed; bottom: 100px; left: 20px; z-index: 90;
+            width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--surface-border);
+            background: var(--surface-card); color: var(--text-secondary);
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+            transition: border-color 0.2s ease, transform 0.2s var(--ease-spring);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .sound-toggle:hover { border-color: var(--color-primary); transform: scale(1.1); }
+        .sound-toggle.active { color: var(--color-primary); border-color: var(--color-primary); }
+
+        /* ══════════════════════════════════════════
+           ANIMATED COUNTERS (enhanced)
+           ══════════════════════════════════════════ */
+        .counter-live {
+            display: inline-flex; align-items: baseline; gap: 4px;
+        }
+        .counter-live .counter-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
+            animation: livePulse 2s ease-in-out infinite;
+        }
+        @keyframes livePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     </style>
 </head>
 <body class="gradient-mesh">
@@ -1059,6 +1279,15 @@
                         <a href="#services" class="btn-ghost" data-magnetic>Our Services</a>
                     </div>
                     <p class="text-sm" style="color: var(--text-tertiary);" data-appear data-appear-delay="0.7">Free no-obligation quotes · Fully insured · Work guaranteed</p>
+                    <!-- Weather Widget -->
+                    <div class="weather-widget mt-6" id="weatherWidget" data-appear data-appear-delay="0.9" style="display:none">
+                        <span class="weather-icon" id="weatherIcon">🌧️</span>
+                        <div>
+                            <div class="weather-temp" id="weatherTemp">--°C</div>
+                            <div class="weather-desc" id="weatherDesc">Loading weather...</div>
+                        </div>
+                        <div class="weather-cta" id="weatherCta"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1143,6 +1372,44 @@
                         <span class="supplier-logo">Cromar</span>
                         <span class="supplier-logo">Firestone</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ CERTIFICATIONS CAROUSEL ═══════════════ -->
+        <section class="py-12" aria-label="Certifications and accreditations">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] mb-6" style="color:var(--text-tertiary)">Certified & Accredited</p>
+                <div class="cert-strip">
+                    <div class="cert-track">
+                        <div class="cert-item"><span class="cert-icon">🏗️</span> NFRC Member</div>
+                        <div class="cert-item"><span class="cert-icon">✅</span> TrustMark Registered</div>
+                        <div class="cert-item"><span class="cert-icon">🛡️</span> Federation of Master Builders</div>
+                        <div class="cert-item"><span class="cert-icon">📋</span> CHAS Accredited</div>
+                        <div class="cert-item"><span class="cert-icon">🏆</span> Competent Roofer Scheme</div>
+                        <div class="cert-item"><span class="cert-icon">🔒</span> £5M Public Liability</div>
+                        <div class="cert-item"><span class="cert-icon">⭐</span> Checkatrade Verified</div>
+                        <div class="cert-item"><span class="cert-icon">🏗️</span> NFRC Member</div>
+                        <div class="cert-item"><span class="cert-icon">✅</span> TrustMark Registered</div>
+                        <div class="cert-item"><span class="cert-icon">🛡️</span> Federation of Master Builders</div>
+                        <div class="cert-item"><span class="cert-icon">📋</span> CHAS Accredited</div>
+                        <div class="cert-item"><span class="cert-icon">🏆</span> Competent Roofer Scheme</div>
+                        <div class="cert-item"><span class="cert-icon">🔒</span> £5M Public Liability</div>
+                        <div class="cert-item"><span class="cert-icon">⭐</span> Checkatrade Verified</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ SEASONAL PROMO ═══════════════ -->
+        <section class="py-8" aria-label="Current promotion">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="promo-banner" data-reveal="fade-up">
+                    <div class="flex items-center gap-4 flex-wrap">
+                        <span class="promo-badge" id="promoBadge">Spring Offer</span>
+                        <p class="font-semibold" style="color:var(--text-primary)" id="promoText">Book a free roof inspection this month and get <strong>20% off</strong> gutter cleaning</p>
+                    </div>
+                    <a href="#contact" class="btn-primary text-sm" data-magnetic>Claim Offer</a>
                 </div>
             </div>
         </section>
@@ -1233,6 +1500,42 @@
 
         <div class="section-divider max-w-[1200px] mx-auto"></div>
 
+        <!-- ═══════════════ CUSTOMER JOURNEY ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Your journey with us">
+            <div class="max-w-[800px] mx-auto px-6">
+                <div class="text-center mb-12" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">What to Expect</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        Your Journey <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">From Call to Completion</span>
+                    </h2>
+                </div>
+                <div class="journey-line" data-reveal="fade-up">
+                    <div class="journey-step" data-stagger-child>
+                        <h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">📞 Initial Call</h3>
+                        <p class="text-sm" style="color:var(--text-secondary)">Tell us about your roof. We'll ask a few questions and book a convenient time for a free site visit — usually within 48 hours.</p>
+                    </div>
+                    <div class="journey-step" data-stagger-child>
+                        <h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">🔍 Free Inspection</h3>
+                        <p class="text-sm" style="color:var(--text-secondary)">We inspect your roof in person, take photos, measure up, and explain exactly what's needed — no jargon, no pressure.</p>
+                    </div>
+                    <div class="journey-step" data-stagger-child>
+                        <h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">📝 Clear Quote</h3>
+                        <p class="text-sm" style="color:var(--text-secondary)">You receive a detailed written quote within 24 hours — itemised, transparent, no hidden costs. Finance options available.</p>
+                    </div>
+                    <div class="journey-step" data-stagger-child>
+                        <h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">🏗️ The Build</h3>
+                        <p class="text-sm" style="color:var(--text-secondary)">Our team arrives on the agreed date, fully equipped. We keep you updated daily, protect your property, and leave the site clean.</p>
+                    </div>
+                    <div class="journey-step" data-stagger-child>
+                        <h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">✅ Final Sign-Off</h3>
+                        <p class="text-sm" style="color:var(--text-secondary)">We walk you through the finished work, hand over your guarantee certificate, and make sure you're 100% happy before we leave.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
         <!-- ═══════════════ INSTANT QUOTE CALCULATOR ═══════════════ -->
         <section id="calculator" class="py-24 md:py-32" aria-label="Instant quote calculator">
             <div class="max-w-[800px] mx-auto px-6">
@@ -1271,6 +1574,177 @@
                         <p class="text-xs mt-2" style="color:var(--text-tertiary)">*Rough guide only. Final price depends on site inspection.</p>
                     </div>
                     <a href="#contact" class="btn-primary w-full mt-6 text-center" data-magnetic>Get Your Exact Quote — It's Free</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ FINANCING ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Financing options">
+            <div class="max-w-[900px] mx-auto px-6">
+                <div class="text-center mb-12" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Flexible Finance</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        Spread the Cost <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">From £49/month</span>
+                    </h2>
+                    <p style="color:var(--text-secondary)">Don't let cost hold you back. We offer flexible payment plans on all major roofing work so you can protect your home now and pay over time.</p>
+                </div>
+                <div class="finance-card" data-reveal="fade-up">
+                    <p class="text-sm font-semibold mb-6" style="color:var(--text-secondary)">Adjust the total project cost</p>
+                    <div class="finance-big" id="financeTotal">£8,000</div>
+                    <div class="finance-slider-wrap">
+                        <label for="financeSlider" class="sr-only">Project cost</label>
+                        <input type="range" class="finance-range" id="financeSlider" min="2000" max="30000" value="8000" step="500">
+                    </div>
+                    <div class="flex justify-between text-xs mb-8" style="color:var(--text-tertiary)"><span>£2,000</span><span>£30,000</span></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl" style="background:var(--surface-overlay);border:1px solid var(--surface-border)">
+                            <p class="text-xs mb-1" style="color:var(--text-tertiary)">12 months</p>
+                            <p class="font-display font-bold text-lg" style="color:var(--text-primary)" id="fin12">£667/mo</p>
+                            <p class="text-xs" style="color:var(--color-primary)">0% interest</p>
+                        </div>
+                        <div class="p-4 rounded-xl" style="background:rgba(42,122,240,0.06);border:1px solid rgba(42,122,240,0.2)">
+                            <p class="text-xs mb-1" style="color:var(--text-tertiary)">24 months</p>
+                            <p class="font-display font-bold text-lg" style="color:var(--text-primary)" id="fin24">£347/mo</p>
+                            <p class="text-xs" style="color:var(--color-primary)">Most popular</p>
+                        </div>
+                        <div class="p-4 rounded-xl" style="background:var(--surface-overlay);border:1px solid var(--surface-border)">
+                            <p class="text-xs mb-1" style="color:var(--text-tertiary)">60 months</p>
+                            <p class="font-display font-bold text-lg" style="color:var(--text-primary)" id="fin60">£149/mo</p>
+                            <p class="text-xs" style="color:var(--text-tertiary)">9.9% APR</p>
+                        </div>
+                    </div>
+                    <p class="text-xs mt-6" style="color:var(--text-tertiary)">Representative example: £8,000 over 60 months at 9.9% APR = £149/mo. Total payable £8,940. Subject to status.</p>
+                    <a href="#contact" class="btn-primary mt-6 inline-flex" data-magnetic>Discuss Finance Options</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ MATERIALS COMPARISON ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Materials comparison">
+            <div class="max-w-[1000px] mx-auto px-6">
+                <div class="text-center mb-12" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Choose Your Material</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        Materials <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Compared</span>
+                    </h2>
+                    <p style="color:var(--text-secondary)">Every material has trade-offs. Here's an honest breakdown to help you choose.</p>
+                </div>
+                <div class="overflow-x-auto" data-reveal="fade-up">
+                    <table class="mat-table" id="matTable">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Lifespan</th>
+                                <th>Cost</th>
+                                <th>Durability</th>
+                                <th>Weight</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold" style="color:var(--text-primary)">🧱 Concrete Tiles</td>
+                                <td>40-60 years</td>
+                                <td>£</td>
+                                <td><div class="mat-bar"><div class="mat-bar-fill" style="width:75%"></div></div></td>
+                                <td>Heavy</td>
+                                <td>Budget-friendly new builds</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold" style="color:var(--text-primary)">🏠 Clay Tiles</td>
+                                <td>60-100 years</td>
+                                <td>££</td>
+                                <td><div class="mat-bar"><div class="mat-bar-fill" style="width:90%"></div></div></td>
+                                <td>Heavy</td>
+                                <td>Traditional character homes</td>
+                            </tr>
+                            <tr class="mat-best">
+                                <td class="font-semibold" style="color:var(--text-primary)">💎 Natural Slate</td>
+                                <td>100+ years</td>
+                                <td>£££</td>
+                                <td><div class="mat-bar"><div class="mat-bar-fill" style="width:98%"></div></div></td>
+                                <td>Medium</td>
+                                <td>Premium, heritage properties</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold" style="color:var(--text-primary)">📐 EPDM Rubber</td>
+                                <td>30-50 years</td>
+                                <td>££</td>
+                                <td><div class="mat-bar"><div class="mat-bar-fill" style="width:70%"></div></div></td>
+                                <td>Light</td>
+                                <td>Flat roofs, extensions</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold" style="color:var(--text-primary)">🔩 Metal Standing Seam</td>
+                                <td>50-70 years</td>
+                                <td>£££</td>
+                                <td><div class="mat-bar"><div class="mat-bar-fill" style="width:85%"></div></div></td>
+                                <td>Light</td>
+                                <td>Modern builds, low pitch</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold" style="color:var(--text-primary)">🏗️ GRP Fibreglass</td>
+                                <td>25-40 years</td>
+                                <td>£</td>
+                                <td><div class="mat-bar"><div class="mat-bar-fill" style="width:60%"></div></div></td>
+                                <td>Light</td>
+                                <td>Flat roofs, porches</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-center text-sm mt-6" style="color:var(--text-tertiary)">Not sure which material suits your property? <a href="#contact" class="text-brand-400 font-semibold hover:underline">Ask us — it's free advice</a></p>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ INSURANCE CLAIM GUIDE ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Insurance claim assistance">
+            <div class="max-w-[800px] mx-auto px-6">
+                <div class="text-center mb-12" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Storm Damage?</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        We Handle Your <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Insurance Claim</span>
+                    </h2>
+                    <p style="color:var(--text-secondary)">Most storm damage roof repairs are covered by your home insurance. We make the process painless — here's how it works.</p>
+                </div>
+                <div class="flex flex-col gap-4" data-stagger-parent>
+                    <div class="ins-step" data-stagger-child data-reveal="fade-up">
+                        <div class="ins-step-num">1</div>
+                        <div>
+                            <h3 class="font-display font-semibold mb-1" style="color:var(--text-primary)">Emergency Make-Safe</h3>
+                            <p class="text-sm" style="color:var(--text-secondary)">We arrive the same day to secure your property and prevent further damage — tarpaulin, temporary repairs, whatever's needed.</p>
+                        </div>
+                    </div>
+                    <div class="ins-step" data-stagger-child data-reveal="fade-up">
+                        <div class="ins-step-num">2</div>
+                        <div>
+                            <h3 class="font-display font-semibold mb-1" style="color:var(--text-primary)">Full Damage Report</h3>
+                            <p class="text-sm" style="color:var(--text-secondary)">We document everything — photos, measurements, and a detailed written report — ready to send straight to your insurer.</p>
+                        </div>
+                    </div>
+                    <div class="ins-step" data-stagger-child data-reveal="fade-up">
+                        <div class="ins-step-num">3</div>
+                        <div>
+                            <h3 class="font-display font-semibold mb-1" style="color:var(--text-primary)">Liaise With Your Insurer</h3>
+                            <p class="text-sm" style="color:var(--text-secondary)">We deal directly with your insurance company, answer their questions, meet their assessor on site if required, and chase approvals so you don't have to.</p>
+                        </div>
+                    </div>
+                    <div class="ins-step" data-stagger-child data-reveal="fade-up">
+                        <div class="ins-step-num">4</div>
+                        <div>
+                            <h3 class="font-display font-semibold mb-1" style="color:var(--text-primary)">Permanent Repair</h3>
+                            <p class="text-sm" style="color:var(--text-secondary)">Once approved, we carry out the full repair to the highest standard — guaranteed workmanship, no excess surprises.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="tel:+447940763489" class="btn-primary" data-magnetic>🚨 Report Storm Damage</a>
                 </div>
             </div>
         </section>
@@ -1368,6 +1842,55 @@
                                 <source src="ej-roofing-promo.mp4" type="video/mp4">
                             </video>
                             <img src="aerial-roof.jpg" alt="Aerial view of a completed residential roof" class="video-fallback hidden w-full" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ TEAM PROFILES ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Meet the team">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Meet the Team</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        The People Behind <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Every Roof</span>
+                    </h2>
+                    <p style="color:var(--text-secondary)">A small, dedicated team that takes pride in every single job. We don't subcontract — the people you meet are the people who do the work.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger-parent>
+                    <div class="team-card" data-stagger-child data-tilt>
+                        <div class="team-card-img"><img src="https://placehold.co/400x400/111a30/2a7af0?text=EJ" alt="Ellis Jessamine" loading="lazy"></div>
+                        <div class="team-card-body">
+                            <h3 class="font-display font-semibold" style="color:var(--text-primary)">Ellis Jessamine</h3>
+                            <p class="text-sm mb-2" style="color:var(--color-primary)">Founder & Lead Roofer</p>
+                            <p class="text-xs" style="color:var(--text-secondary)">20+ years on the tools. City & Guilds qualified. The one who checks every job twice.</p>
+                        </div>
+                    </div>
+                    <div class="team-card" data-stagger-child data-tilt>
+                        <div class="team-card-img"><img src="https://placehold.co/400x400/111a30/06b6d4?text=Team" alt="Team member" loading="lazy"></div>
+                        <div class="team-card-body">
+                            <h3 class="font-display font-semibold" style="color:var(--text-primary)">Roofer 2</h3>
+                            <p class="text-sm mb-2" style="color:var(--color-primary)">Senior Roofer</p>
+                            <p class="text-xs" style="color:var(--text-secondary)">15 years experience. Specialist in heritage slate work and complex chimney repairs.</p>
+                        </div>
+                    </div>
+                    <div class="team-card" data-stagger-child data-tilt>
+                        <div class="team-card-img"><img src="https://placehold.co/400x400/111a30/22c55e?text=Team" alt="Team member" loading="lazy"></div>
+                        <div class="team-card-body">
+                            <h3 class="font-display font-semibold" style="color:var(--text-primary)">Roofer 3</h3>
+                            <p class="text-sm mb-2" style="color:var(--color-primary)">Flat Roofing Specialist</p>
+                            <p class="text-xs" style="color:var(--text-secondary)">EPDM and GRP certified. Handles all flat roof, porch, and extension work.</p>
+                        </div>
+                    </div>
+                    <div class="team-card" data-stagger-child data-tilt>
+                        <div class="team-card-img"><img src="https://placehold.co/400x400/111a30/f59e0b?text=Team" alt="Team member" loading="lazy"></div>
+                        <div class="team-card-body">
+                            <h3 class="font-display font-semibold" style="color:var(--text-primary)">Office Manager</h3>
+                            <p class="text-sm mb-2" style="color:var(--color-primary)">Operations & Scheduling</p>
+                            <p class="text-xs" style="color:var(--text-secondary)">Your first point of contact. Manages bookings, quotes, and makes sure everything runs on time.</p>
                         </div>
                     </div>
                 </div>
@@ -1490,6 +2013,52 @@
 
         <div class="section-divider max-w-[1200px] mx-auto"></div>
 
+        <!-- ═══════════════ VIDEO TESTIMONIALS ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Video testimonials">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Real Stories</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        Hear It <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">From Our Customers</span>
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-stagger-parent>
+                    <div class="vid-testimonial" data-stagger-child data-reveal="fade-up">
+                        <video src="ej-roofing-promo.mp4" poster="hero-roofer.jpg" preload="none" playsinline muted loop></video>
+                        <div class="vid-play" data-vid-play>
+                            <div class="vid-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M8 5v14l11-7L8 5z"/></svg></div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <p class="font-semibold text-sm">The Hendersons</p>
+                            <p class="text-xs opacity-80">Full roof replacement, Carlisle</p>
+                        </div>
+                    </div>
+                    <div class="vid-testimonial" data-stagger-child data-reveal="fade-up">
+                        <video src="ej-roofing-promo.mp4" poster="aerial-roof.jpg" preload="none" playsinline muted loop></video>
+                        <div class="vid-play" data-vid-play>
+                            <div class="vid-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M8 5v14l11-7L8 5z"/></svg></div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <p class="font-semibold text-sm">Mark S.</p>
+                            <p class="text-xs opacity-80">Emergency leak repair, Penrith</p>
+                        </div>
+                    </div>
+                    <div class="vid-testimonial" data-stagger-child data-reveal="fade-up">
+                        <video src="ej-roofing-promo.mp4" poster="detail-tiles.jpg" preload="none" playsinline muted loop></video>
+                        <div class="vid-play" data-vid-play>
+                            <div class="vid-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M8 5v14l11-7L8 5z"/></svg></div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <p class="font-semibold text-sm">Sarah & James</p>
+                            <p class="text-xs opacity-80">Heritage slate restoration, Wetheral</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
         <!-- ═══════════════ BLOG / TIPS ═══════════════ -->
         <section class="py-24 md:py-32" aria-label="Roofing tips">
             <div class="max-w-[1200px] mx-auto px-6">
@@ -1525,6 +2094,52 @@
                             <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">Natural slate lasts 100+ years but costs more upfront. Concrete tiles are affordable and durable. Here's how to choose the right one for your home.</p>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ 3D INTERACTIVE ROOF ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Interactive 3D roof model">
+            <div class="max-w-[1000px] mx-auto px-6">
+                <div class="text-center mb-12" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Explore a Roof</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        Interactive <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">3D Roof Model</span>
+                    </h2>
+                    <p style="color:var(--text-secondary)">Click the hotspots to learn about each part of a roof. Drag to rotate.</p>
+                </div>
+                <div class="roof3d-container" id="roof3dContainer" data-reveal="fade-up">
+                    <canvas id="roof3dCanvas"></canvas>
+                    <div class="roof3d-label" id="roof3dLabel"></div>
+                    <!-- Hotspots positioned by JS after Three.js renders -->
+                    <div class="roof3d-hotspot" id="hs-ridge" style="top:18%;left:50%" data-info="Ridge Tiles — The cap along the peak of the roof. Protects the joint where two roof slopes meet. Often the first place to need repointing."></div>
+                    <div class="roof3d-hotspot" id="hs-valley" style="top:55%;left:28%" data-info="Valley — The channel where two slopes meet at an internal angle. Prone to leaf buildup and leaks if lead flashing deteriorates."></div>
+                    <div class="roof3d-hotspot" id="hs-flashing" style="top:38%;left:72%" data-info="Lead Flashing — Waterproof strips where the roof meets a wall or chimney. Should be inspected yearly — cracks cause hidden leaks."></div>
+                    <div class="roof3d-hotspot" id="hs-gutter" style="top:82%;left:50%" data-info="Guttering & Fascias — Channels rainwater away from your walls and foundations. Blocked gutters cause damp, mould, and structural damage."></div>
+                    <div class="roof3d-hotspot" id="hs-tiles" style="top:45%;left:45%" data-info="Roof Tiles — The main weatherproofing layer. Concrete, clay, or slate — each has different lifespan and cost. We work with all types."></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ NEWSLETTER SIGNUP ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Newsletter signup">
+            <div class="max-w-[600px] mx-auto px-6 text-center">
+                <div data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Stay Protected</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(1.5rem,3vw,2.5rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        Seasonal Roof <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Maintenance Reminders</span>
+                    </h2>
+                    <p class="mb-8" style="color:var(--text-secondary)">Get a quick email each season with tips to keep your roof in top shape. No spam — just useful reminders from roofers who care.</p>
+                    <form class="nl-form" id="nlForm">
+                        <label for="nlEmail" class="sr-only">Your email address</label>
+                        <input type="email" id="nlEmail" name="email" placeholder="Your email address" required autocomplete="email" inputmode="email">
+                        <button type="submit" data-magnetic>Subscribe</button>
+                    </form>
+                    <p class="text-xs mt-4" style="color:var(--text-tertiary)">Unsubscribe anytime. We never share your email.</p>
                 </div>
             </div>
         </section>
@@ -1606,6 +2221,14 @@
         </section>
     </main>
 
+    <!-- ═══ SOUND TOGGLE ═══ -->
+    <button class="sound-toggle" id="soundToggle" aria-label="Toggle ambient sound">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="soundIcon">
+            <path d="M10 3L5 7H2v6h3l5 4V3z"/>
+            <path d="M14 7.5a4 4 0 010 5M16.5 5a8 8 0 010 10" class="sound-waves"/>
+        </svg>
+    </button>
+
     <!-- ═══ LIGHTBOX ═══ -->
     <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Image viewer">
         <button class="lightbox-close" id="lightboxClose" aria-label="Close"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l12 12M16 4L4 16"/></svg></button>
@@ -1661,6 +2284,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- AireyAI Animation Toolkit -->
     <script src="animations.js"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <script>
         // ══════════════════════════════════════════
@@ -2150,6 +2775,383 @@
                 requestAnimationFrame(animateTrail);
             }
             animateTrail();
+        })();
+
+        // ══════════════════════════════════════════
+        // FINANCING CALCULATOR
+        // ══════════════════════════════════════════
+        (function() {
+            const slider = document.getElementById('financeSlider');
+            const totalEl = document.getElementById('financeTotal');
+            const fin12 = document.getElementById('fin12');
+            const fin24 = document.getElementById('fin24');
+            const fin60 = document.getElementById('fin60');
+            if (!slider) return;
+
+            function updateFinance() {
+                const val = parseInt(slider.value);
+                totalEl.textContent = '£' + val.toLocaleString();
+                fin12.textContent = '£' + Math.round(val / 12).toLocaleString() + '/mo';
+                fin24.textContent = '£' + Math.round(val / 24 * 1.03).toLocaleString() + '/mo';
+                const monthlyRate = 0.099 / 12;
+                const m60 = Math.round(val * monthlyRate / (1 - Math.pow(1 + monthlyRate, -60)));
+                fin60.textContent = '£' + m60.toLocaleString() + '/mo';
+            }
+            slider.addEventListener('input', updateFinance);
+        })();
+
+        // ══════════════════════════════════════════
+        // LIVE WEATHER WIDGET
+        // ══════════════════════════════════════════
+        (function() {
+            const widget = document.getElementById('weatherWidget');
+            const icon = document.getElementById('weatherIcon');
+            const temp = document.getElementById('weatherTemp');
+            const desc = document.getElementById('weatherDesc');
+            const cta = document.getElementById('weatherCta');
+            if (!widget) return;
+
+            // Carlisle coordinates
+            fetch('https://api.open-meteo.com/v1/forecast?latitude=54.89&longitude=-2.94&current=temperature_2m,weather_code&timezone=Europe/London')
+                .then(r => r.json())
+                .then(data => {
+                    const t = Math.round(data.current.temperature_2m);
+                    const code = data.current.weather_code;
+                    temp.textContent = t + '°C';
+
+                    // Map weather codes to icons and descriptions
+                    const weather = code <= 1 ? { i: '☀️', d: 'Clear skies in Carlisle' }
+                        : code <= 3 ? { i: '⛅', d: 'Partly cloudy in Carlisle' }
+                        : code <= 48 ? { i: '🌫️', d: 'Foggy in Carlisle' }
+                        : code <= 57 ? { i: '🌧️', d: 'Drizzle in Carlisle' }
+                        : code <= 67 ? { i: '🌧️', d: 'Raining in Carlisle' }
+                        : code <= 77 ? { i: '🌨️', d: 'Snow in Carlisle' }
+                        : code <= 82 ? { i: '🌧️', d: 'Heavy rain in Carlisle' }
+                        : code <= 86 ? { i: '🌨️', d: 'Heavy snow in Carlisle' }
+                        : { i: '⛈️', d: 'Thunderstorms in Carlisle' };
+
+                    icon.textContent = weather.i;
+                    desc.textContent = weather.d;
+
+                    // Contextual CTA based on weather
+                    if (code >= 51) {
+                        cta.textContent = '🚨 Is your roof ready?';
+                    } else if (t < 5) {
+                        cta.textContent = '❄️ Book a winter check';
+                    } else {
+                        cta.textContent = '☀️ Perfect inspection weather';
+                    }
+
+                    widget.style.display = 'flex';
+                })
+                .catch(() => {}); // Silently fail — widget stays hidden
+        })();
+
+        // ══════════════════════════════════════════
+        // SEASONAL PROMO (auto-rotates by month)
+        // ══════════════════════════════════════════
+        (function() {
+            const badge = document.getElementById('promoBadge');
+            const text = document.getElementById('promoText');
+            if (!badge) return;
+            const month = new Date().getMonth();
+            const promos = [
+                { badge: 'Winter Deal', text: 'Book a storm-damage inspection and get <strong>free</strong> gutter cleaning this January' },
+                { badge: 'Winter Deal', text: 'February special: <strong>15% off</strong> all flat roof replacements' },
+                { badge: 'Spring Offer', text: 'Spring is here — book your free roof health check before the busy season' },
+                { badge: 'Spring Offer', text: 'Book a free roof inspection this month and get <strong>20% off</strong> gutter cleaning' },
+                { badge: 'Spring Offer', text: 'May bank holiday offer: <strong>free</strong> chimney inspection with any roof repair' },
+                { badge: 'Summer Deal', text: 'Summer is perfect for re-roofing. Book now for <strong>10% off</strong> full replacements' },
+                { badge: 'Summer Deal', text: 'July offer: <strong>free</strong> loft insulation check with any roof work over £3,000' },
+                { badge: 'Summer Deal', text: 'Last chance for summer rates — <strong>15% off</strong> all slate work booked in August' },
+                { badge: 'Autumn Prep', text: 'Get your roof winter-ready. <strong>Free</strong> 12-point inspection this September' },
+                { badge: 'Autumn Prep', text: 'October storms are coming — book your <strong>free</strong> gutter clearance with any repair' },
+                { badge: 'Winter Prep', text: 'Beat the freeze: <strong>20% off</strong> emergency repair call-out fees in November' },
+                { badge: 'Holiday Deal', text: 'Gift a safe roof: <strong>free</strong> fascia repaint with any December booking over £2,000' },
+            ];
+            badge.textContent = promos[month].badge;
+            text.innerHTML = promos[month].text;
+        })();
+
+        // ══════════════════════════════════════════
+        // VIDEO TESTIMONIALS (play/pause on click)
+        // ══════════════════════════════════════════
+        document.querySelectorAll('[data-vid-play]').forEach(overlay => {
+            overlay.addEventListener('click', function() {
+                const container = this.closest('.vid-testimonial');
+                const video = container.querySelector('video');
+                if (video.paused) {
+                    video.play();
+                    this.style.opacity = '0';
+                    this.style.pointerEvents = 'none';
+                    video.addEventListener('ended', () => {
+                        this.style.opacity = '1';
+                        this.style.pointerEvents = 'auto';
+                        video.currentTime = 0;
+                    }, { once: true });
+                }
+            });
+        });
+
+        // ══════════════════════════════════════════
+        // NEWSLETTER FORM
+        // ══════════════════════════════════════════
+        document.getElementById('nlForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const input = this.querySelector('input');
+            btn.textContent = 'Subscribed ✓';
+            btn.style.background = '#059669';
+            input.value = '';
+            setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
+        });
+
+        // ══════════════════════════════════════════
+        // 3D ROOF MODEL (Three.js)
+        // ══════════════════════════════════════════
+        (function() {
+            const container = document.getElementById('roof3dContainer');
+            const canvas = document.getElementById('roof3dCanvas');
+            const label = document.getElementById('roof3dLabel');
+            if (!container || typeof THREE === 'undefined') return;
+
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--surface-card').trim() || '#111a30');
+
+            const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+            camera.position.set(4, 3, 6);
+            camera.lookAt(0, 0.8, 0);
+
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+            renderer.setSize(w, h);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // Lighting
+            scene.add(new THREE.AmbientLight(0x6688cc, 0.6));
+            const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            dirLight.position.set(5, 8, 5);
+            scene.add(dirLight);
+
+            // Materials
+            const wallMat = new THREE.MeshStandardMaterial({ color: 0x8899aa, roughness: 0.8 });
+            const roofMat = new THREE.MeshStandardMaterial({ color: 0x2a5599, roughness: 0.6, metalness: 0.1 });
+            const ridgeMat = new THREE.MeshStandardMaterial({ color: 0x334466, roughness: 0.5 });
+            const chimneyMat = new THREE.MeshStandardMaterial({ color: 0x995544, roughness: 0.9 });
+
+            // House body
+            const body = new THREE.Mesh(new THREE.BoxGeometry(3, 1.8, 2.5), wallMat);
+            body.position.y = 0.9;
+            scene.add(body);
+
+            // Roof (two planes)
+            const roofGeo = new THREE.PlaneGeometry(3.4, 2);
+            const roofL = new THREE.Mesh(roofGeo, roofMat);
+            roofL.position.set(0, 2.35, 0);
+            roofL.rotation.x = -Math.PI / 4;
+            scene.add(roofL);
+            const roofR = new THREE.Mesh(roofGeo, roofMat);
+            roofR.position.set(0, 2.35, 0);
+            roofR.rotation.x = Math.PI / 4;
+            scene.add(roofR);
+
+            // Ridge
+            const ridge = new THREE.Mesh(new THREE.BoxGeometry(3.4, 0.1, 0.15), ridgeMat);
+            ridge.position.set(0, 2.73, 0);
+            scene.add(ridge);
+
+            // Chimney
+            const chimney = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.8, 0.4), chimneyMat);
+            chimney.position.set(0.8, 3, 0);
+            scene.add(chimney);
+
+            // Ground
+            const ground = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshStandardMaterial({ color: 0x223344 }));
+            ground.rotation.x = -Math.PI / 2;
+            scene.add(ground);
+
+            // Gutter
+            const gutterGeo = new THREE.BoxGeometry(3.4, 0.06, 0.1);
+            const gutterMat = new THREE.MeshStandardMaterial({ color: 0x444444, metalness: 0.6, roughness: 0.3 });
+            const gutterF = new THREE.Mesh(gutterGeo, gutterMat);
+            gutterF.position.set(0, 1.1, 1.3);
+            scene.add(gutterF);
+            const gutterB = new THREE.Mesh(gutterGeo, gutterMat);
+            gutterB.position.set(0, 1.1, -1.3);
+            scene.add(gutterB);
+
+            // Mouse rotation
+            let isDragging = false, prevX = 0, rotY = 0;
+            container.addEventListener('pointerdown', (e) => { isDragging = true; prevX = e.clientX; container.setPointerCapture(e.pointerId); });
+            container.addEventListener('pointermove', (e) => {
+                if (!isDragging) return;
+                rotY += (e.clientX - prevX) * 0.005;
+                prevX = e.clientX;
+            });
+            container.addEventListener('pointerup', () => { isDragging = false; });
+
+            // Hotspot interactions
+            container.querySelectorAll('.roof3d-hotspot').forEach(hs => {
+                hs.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    label.textContent = hs.dataset.info;
+                    label.style.left = hs.style.left;
+                    label.style.top = hs.style.top;
+                    label.classList.add('visible');
+                    setTimeout(() => label.classList.remove('visible'), 4000);
+                });
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+                if (!isDragging) rotY += 0.002;
+                scene.rotation.y = rotY;
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Resize
+            window.addEventListener('resize', () => {
+                const nw = container.clientWidth;
+                const nh = container.clientHeight;
+                camera.aspect = nw / nh;
+                camera.updateProjectionMatrix();
+                renderer.setSize(nw, nh);
+            });
+        })();
+
+        // ══════════════════════════════════════════
+        // SOUND DESIGN (Ambient Rain + Click)
+        // ══════════════════════════════════════════
+        (function() {
+            const btn = document.getElementById('soundToggle');
+            if (!btn) return;
+            let audioCtx, rainSource, isPlaying = false;
+
+            function createRain(ctx) {
+                // Generate pink noise for rain sound
+                const bufferSize = ctx.sampleRate * 4;
+                const buffer = ctx.createBuffer(2, bufferSize, ctx.sampleRate);
+                for (let ch = 0; ch < 2; ch++) {
+                    const data = buffer.getChannelData(ch);
+                    let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+                    for (let i = 0; i < bufferSize; i++) {
+                        const white = Math.random() * 2 - 1;
+                        b0 = 0.99886 * b0 + white * 0.0555179;
+                        b1 = 0.99332 * b1 + white * 0.0750759;
+                        b2 = 0.96900 * b2 + white * 0.1538520;
+                        b3 = 0.86650 * b3 + white * 0.3104856;
+                        b4 = 0.55000 * b4 + white * 0.5329522;
+                        b5 = -0.7616 * b5 - white * 0.0168980;
+                        data[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.015;
+                        b6 = white * 0.115926;
+                    }
+                }
+                const source = ctx.createBufferSource();
+                source.buffer = buffer;
+                source.loop = true;
+                const gain = ctx.createGain();
+                gain.gain.value = 0;
+                const filter = ctx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.value = 800;
+                source.connect(filter);
+                filter.connect(gain);
+                gain.connect(ctx.destination);
+                source.start();
+                return { source, gain };
+            }
+
+            // Click sound using Web Audio
+            function playClick() {
+                if (!audioCtx) return;
+                const osc = audioCtx.createOscillator();
+                const g = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                g.gain.value = 0.05;
+                g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+                osc.connect(g);
+                g.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.08);
+            }
+
+            btn.addEventListener('click', () => {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+                if (!isPlaying) {
+                    if (!rainSource) rainSource = createRain(audioCtx);
+                    rainSource.gain.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 1);
+                    btn.classList.add('active');
+                    isPlaying = true;
+
+                    // Add click sounds to buttons
+                    document.querySelectorAll('a, button').forEach(el => {
+                        el.addEventListener('click', playClick);
+                    });
+                } else {
+                    rainSource.gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1);
+                    btn.classList.remove('active');
+                    isPlaying = false;
+                }
+            });
+        })();
+
+        // ══════════════════════════════════════════
+        // SMOOTH PAGE TRANSITIONS (GSAP)
+        // ══════════════════════════════════════════
+        (function() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            // Smooth section transitions on scroll
+            gsap.utils.toArray('section[aria-label]').forEach(section => {
+                gsap.fromTo(section,
+                    { opacity: 0.6 },
+                    {
+                        opacity: 1,
+                        duration: 0.6,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 85%',
+                            end: 'top 50%',
+                            scrub: 0.5
+                        }
+                    }
+                );
+            });
+        })();
+
+        // ══════════════════════════════════════════
+        // ANIMATED COUNTERS ON SCROLL (enhanced)
+        // ══════════════════════════════════════════
+        (function() {
+            const counters = document.querySelectorAll('[data-counter]');
+            if (!counters.length) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting || entry.target.dataset.counted) return;
+                    entry.target.dataset.counted = '1';
+                    const target = parseInt(entry.target.dataset.counter);
+                    const suffix = entry.target.dataset.counterSuffix || '';
+                    const duration = 2000;
+                    const start = performance.now();
+
+                    function step(now) {
+                        const progress = Math.min((now - start) / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+                        const current = Math.round(target * eased);
+                        entry.target.textContent = current.toLocaleString() + suffix;
+                        if (progress < 1) requestAnimationFrame(step);
+                    }
+                    requestAnimationFrame(step);
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(c => observer.observe(c));
         })();
     </script>
 </body>
