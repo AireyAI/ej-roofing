@@ -107,8 +107,8 @@
             --surface-border: rgba(42, 122, 240, 0.12);
 
             --text-primary: #eef2ff;
-            --text-secondary: #8b9cc7;
-            --text-tertiary: #7a8db5;
+            --text-secondary: #a0b3d4;
+            --text-tertiary: #95a8d0;
             --text-on-primary: #ffffff;
 
             --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -136,7 +136,7 @@
 
             --text-primary: #0f1629;
             --text-secondary: #4a5578;
-            --text-tertiary: #6b7a9e;
+            --text-tertiary: #5a6888;
             --text-on-primary: #ffffff;
 
             --shadow-card: 0 4px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.08);
@@ -582,7 +582,7 @@
         .video-container video { width: 100%; display: block; }
 
         /* ── Gallery ── */
-        .gallery-item { border-radius: 16px; overflow: hidden; position: relative; }
+        .gallery-item { border-radius: 16px; overflow: hidden; position: relative; cursor: zoom-in; }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out-quart); }
         .gallery-item:hover img { transform: scale(1.05); }
         .gallery-item::after {
@@ -783,9 +783,163 @@
         }
         .map-container iframe { width: 100%; height: 100%; border: 0; filter: saturate(0.8) contrast(1.1); }
         [data-theme="dark"] .map-container iframe { filter: invert(0.92) hue-rotate(180deg) saturate(0.6) contrast(1.2); }
+
+        /* ══════════════════════════════════════════
+           EMERGENCY BANNER
+           ══════════════════════════════════════════ */
+        .emergency-banner {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            padding: 8px 16px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            transform: translateY(-100%); transition: transform 0.4s var(--ease-out-quart);
+        }
+        .emergency-banner.visible { transform: translateY(0); }
+        .emergency-banner p { font-size: 13px; font-weight: 600; color: #fff; margin: 0; }
+        .emergency-banner a { background: #fff; color: #dc2626; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform 0.2s ease; min-height: 44px; display: inline-flex; align-items: center; }
+        .emergency-banner a:hover { transform: scale(1.05); }
+        .emergency-banner .banner-close { background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer; padding: 10px; line-height: 0; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+        .emergency-banner .banner-close:hover { color: #fff; }
+        .emergency-banner + .nav { transition: top 0.4s var(--ease-out-quart); }
+        @media (max-width: 640px) { .emergency-banner { gap: 6px; padding: 6px 12px; } .emergency-banner p { font-size: 11px; } }
+
+        /* ══════════════════════════════════════════
+           LIGHTBOX
+           ══════════════════════════════════════════ */
+        .lightbox {
+            position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.95);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s;
+        }
+        .lightbox.active { opacity: 1; visibility: visible; }
+        .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 12px; transform: scale(0.9); transition: transform 0.3s var(--ease-out-quart); }
+        .lightbox.active img { transform: scale(1); }
+        .lightbox-close { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; transition: background 0.2s; }
+        .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; transition: background 0.2s; }
+        .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+        .lightbox-prev { left: 16px; }
+        .lightbox-next { right: 16px; }
+        .lightbox-counter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.6); font-size: 13px; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* ══════════════════════════════════════════
+           TRUST BADGES
+           ══════════════════════════════════════════ */
+        .trust-badge {
+            display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 24px 16px;
+            border-radius: 16px; border: 1px solid var(--surface-border); background: var(--surface-card);
+            transition: border-color 0.3s ease, transform 0.3s var(--ease-spring);
+        }
+        .trust-badge:hover { border-color: rgba(42,122,240,0.3); transform: translateY(-4px); }
+        .trust-badge-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .trust-badge-score { font-family: 'Clash Display', sans-serif; font-size: 24px; font-weight: 700; color: var(--text-primary); }
+        .trust-badge-label { font-size: 13px; color: var(--text-secondary); text-align: center; }
+
+        /* ══════════════════════════════════════════
+           QUOTE CALCULATOR
+           ══════════════════════════════════════════ */
+        .calc-option {
+            padding: 16px; border-radius: 14px; border: 2px solid var(--surface-border);
+            background: var(--surface-overlay); cursor: pointer; transition: all 0.2s ease; text-align: center;
+        }
+        .calc-option:hover { border-color: rgba(42,122,240,0.3); }
+        .calc-option.selected { border-color: var(--color-primary); background: rgba(42,122,240,0.08); }
+        .calc-option-icon { font-size: 28px; margin-bottom: 6px; }
+        .calc-option-label { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+        .calc-range-wrap { position: relative; }
+        .calc-range { -webkit-appearance: none; width: 100%; height: 6px; border-radius: 3px; background: var(--surface-border); outline: none; }
+        .calc-range::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); cursor: pointer; box-shadow: 0 2px 8px rgba(42,122,240,0.4); }
+        .calc-range::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); cursor: pointer; border: none; }
+        .calc-result { font-family: 'Clash Display', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        /* ══════════════════════════════════════════
+           HORIZONTAL SCROLL SHOWCASE
+           ══════════════════════════════════════════ */
+        .hscroll-section { overflow: hidden; }
+        .hscroll-track { display: flex; gap: 24px; will-change: transform; }
+        .hscroll-card {
+            flex: 0 0 clamp(300px, 40vw, 500px); border-radius: 20px; overflow: hidden;
+            border: 1px solid var(--surface-border); position: relative; aspect-ratio: 3/4;
+        }
+        .hscroll-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .hscroll-card:hover img { transform: scale(1.05); }
+        .hscroll-card-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 24px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        }
+
+        /* ══════════════════════════════════════════
+           SVG ROOF BLUEPRINT
+           ══════════════════════════════════════════ */
+        .blueprint-svg path, .blueprint-svg line, .blueprint-svg polyline {
+            stroke-dasharray: 1000; stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0s;
+        }
+
+        /* ══════════════════════════════════════════
+           HERO PARTICLES
+           ══════════════════════════════════════════ */
+        .particle-canvas {
+            position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.5;
+        }
+
+        /* ══════════════════════════════════════════
+           CURSOR TRAIL
+           ══════════════════════════════════════════ */
+        .cursor-trail {
+            position: fixed; width: 8px; height: 8px; border-radius: 50%;
+            background: var(--color-primary); pointer-events: none; z-index: 9998;
+            opacity: 0; transition: opacity 0.1s;
+        }
+
+        /* ══════════════════════════════════════════
+           BLOG / TIPS CARDS
+           ══════════════════════════════════════════ */
+        .blog-card {
+            border-radius: 20px; overflow: hidden; border: 1px solid var(--surface-border);
+            background: var(--surface-card); transition: border-color 0.3s ease, transform 0.3s var(--ease-spring);
+        }
+        .blog-card:hover { border-color: rgba(42,122,240,0.3); transform: translateY(-4px); }
+        .blog-card-img { aspect-ratio: 16/9; overflow: hidden; }
+        .blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+        .blog-card-body { padding: 24px; }
+        .blog-tag { display: inline-block; padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* ══════════════════════════════════════════
+           GOOGLE REVIEWS FEED
+           ══════════════════════════════════════════ */
+        .greviews-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+        .greviews-score { font-family: 'Clash Display', sans-serif; font-size: 48px; font-weight: 700; color: var(--text-primary); line-height: 1; }
+        .greviews-stars { color: #fbbf24; font-size: 20px; letter-spacing: 2px; }
+        .greview-card {
+            padding: 24px; border-radius: 16px; border: 1px solid var(--surface-border);
+            background: var(--surface-card); transition: border-color 0.3s ease;
+        }
+        .greview-card:hover { border-color: rgba(42,122,240,0.2); }
+        .greview-google-icon { width: 20px; height: 20px; }
+
+        /* ══════════════════════════════════════════
+           SERVICE AREA MAP
+           ══════════════════════════════════════════ */
+        .area-tag {
+            display: inline-block; padding: 10px 18px; border-radius: 50px; font-size: 14px;
+            border: 1px solid var(--surface-border); background: var(--surface-overlay);
+            color: var(--text-primary); transition: border-color 0.2s ease, color 0.2s ease;
+            min-height: 44px; line-height: 1.5;
+        }
+        .area-tag:hover { border-color: var(--color-primary); color: var(--color-primary); }
     </style>
 </head>
 <body class="gradient-mesh">
+
+    <!-- ═══ EMERGENCY BANNER ═══ -->
+    <div class="emergency-banner" id="emergencyBanner" role="alert">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l7 14H1L8 1z" fill="#fbbf24"/><path d="M8 6v3M8 11h.01" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p>🚨 Roof Leaking? We offer <strong>same-day emergency repairs</strong></p>
+        <a href="tel:+447940763489">Call Now</a>
+        <button class="banner-close" id="bannerClose" aria-label="Dismiss banner"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
+    </div>
 
     <!-- ═══ WELCOME PAGE ═══ -->
     <div id="welcomePage" aria-label="Welcome to E J Roofing">
@@ -803,7 +957,7 @@
             <h1 class="welcome-title">E J Roofing</h1>
             <div class="welcome-line"></div>
             <p class="welcome-tagline">Built to Last</p>
-            <button class="welcome-enter" id="welcomeEnter" aria-label="Enter site">Explore Our Work</button>
+            <button class="welcome-enter" id="welcomeEnter" aria-label="Explore Our Work">Explore Our Work</button>
         </div>
         <button class="welcome-bottom" id="welcomeSkip" aria-label="Skip intro" style="background:none;border:none;cursor:pointer;">
             <span class="welcome-scroll-text">Skip Intro</span>
@@ -886,6 +1040,7 @@
             <div class="hero-bg" aria-hidden="true">
                 <img src="hero-roofer.jpg" alt="" loading="eager" width="1920" height="1080">
                 <div class="hero-overlay"></div>
+                <canvas class="particle-canvas" id="particleCanvas"></canvas>
             </div>
             <div class="hero-content max-w-[1200px] mx-auto px-6 py-32 md:py-0">
                 <div class="max-w-2xl">
@@ -927,6 +1082,38 @@
                     <div class="stat-card" style="background:var(--surface-card)" data-stagger-child>
                         <div class="stat-number flex items-center justify-center gap-1"><span data-counter="4" data-counter-suffix=".9">0</span><span class="text-2xl">★</span></div>
                         <p class="text-sm mt-2" style="color:var(--text-secondary)">Google Rating</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ TRUST BADGES ═══════════════ -->
+        <section class="py-12" aria-label="Trust badges">
+            <div class="max-w-[900px] mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-stagger-parent data-reveal="fade-up">
+                    <div class="trust-badge" data-stagger-child>
+                        <div class="trust-badge-icon" style="background:rgba(34,197,94,0.1)">✅</div>
+                        <div class="trust-badge-score">4.9</div>
+                        <div class="text-sm" style="color:#fbbf24">★★★★★</div>
+                        <div class="trust-badge-label">Google Reviews</div>
+                    </div>
+                    <div class="trust-badge" data-stagger-child>
+                        <div class="trust-badge-icon" style="background:rgba(59,130,246,0.1)">🛡️</div>
+                        <div class="trust-badge-score">10/10</div>
+                        <div class="text-sm text-brand-400">Rated</div>
+                        <div class="trust-badge-label">Checkatrade</div>
+                    </div>
+                    <div class="trust-badge" data-stagger-child>
+                        <div class="trust-badge-icon" style="background:rgba(168,85,247,0.1)">🏆</div>
+                        <div class="trust-badge-score">20+</div>
+                        <div class="text-sm text-brand-400">Years</div>
+                        <div class="trust-badge-label">Established</div>
+                    </div>
+                    <div class="trust-badge" data-stagger-child>
+                        <div class="trust-badge-icon" style="background:rgba(249,115,22,0.1)">📋</div>
+                        <div class="trust-badge-score">100%</div>
+                        <div class="text-sm text-brand-400">Covered</div>
+                        <div class="trust-badge-label">Fully Insured</div>
                     </div>
                 </div>
             </div>
@@ -1046,6 +1233,50 @@
 
         <div class="section-divider max-w-[1200px] mx-auto"></div>
 
+        <!-- ═══════════════ INSTANT QUOTE CALCULATOR ═══════════════ -->
+        <section id="calculator" class="py-24 md:py-32" aria-label="Instant quote calculator">
+            <div class="max-w-[800px] mx-auto px-6">
+                <div class="text-center mb-12" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Get an Estimate</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        Instant <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Quote Calculator</span>
+                    </h2>
+                    <p style="color:var(--text-secondary)">Get a rough estimate in seconds. For an accurate quote, we'll visit your property for free.</p>
+                </div>
+                <div class="p-8 rounded-2xl border" style="border-color:var(--surface-border);background:var(--surface-card)" data-reveal="fade-up">
+                    <!-- Step 1: Roof type -->
+                    <p class="text-sm font-semibold mb-4" style="color:var(--text-primary)">1. What type of work?</p>
+                    <div class="grid grid-cols-3 gap-3 mb-8" id="calcType">
+                        <div class="calc-option selected" data-value="new" data-base="8000"><div class="calc-option-icon">🏠</div><div class="calc-option-label">New Roof</div></div>
+                        <div class="calc-option" data-value="repair" data-base="800"><div class="calc-option-icon">🔧</div><div class="calc-option-label">Repair</div></div>
+                        <div class="calc-option" data-value="flat" data-base="3500"><div class="calc-option-icon">📐</div><div class="calc-option-label">Flat Roof</div></div>
+                    </div>
+                    <!-- Step 2: Size -->
+                    <p class="text-sm font-semibold mb-4" style="color:var(--text-primary)">2. Approximate roof size</p>
+                    <div class="calc-range-wrap mb-2">
+                        <label for="calcSize" class="sr-only">Roof size in square metres</label><input type="range" class="calc-range" id="calcSize" min="20" max="200" value="80" step="10">
+                    </div>
+                    <div class="flex justify-between text-xs mb-8" style="color:var(--text-tertiary)"><span>Small (20m²)</span><span id="calcSizeLabel">80m²</span><span>Large (200m²)</span></div>
+                    <!-- Step 3: Material -->
+                    <p class="text-sm font-semibold mb-4" style="color:var(--text-primary)">3. Material preference</p>
+                    <div class="grid grid-cols-3 gap-3 mb-8" id="calcMaterial">
+                        <div class="calc-option selected" data-value="standard" data-mult="1"><div class="calc-option-icon">🧱</div><div class="calc-option-label">Standard</div></div>
+                        <div class="calc-option" data-value="premium" data-mult="1.4"><div class="calc-option-icon">✨</div><div class="calc-option-label">Premium</div></div>
+                        <div class="calc-option" data-value="slate" data-mult="1.8"><div class="calc-option-icon">💎</div><div class="calc-option-label">Natural Slate</div></div>
+                    </div>
+                    <!-- Result -->
+                    <div class="text-center p-6 rounded-xl" style="background:var(--surface-overlay);border:1px solid var(--surface-border)">
+                        <p class="text-sm mb-2" style="color:var(--text-tertiary)">Estimated cost range</p>
+                        <div class="calc-result" id="calcResult">£6,400 – £9,600</div>
+                        <p class="text-xs mt-2" style="color:var(--text-tertiary)">*Rough guide only. Final price depends on site inspection.</p>
+                    </div>
+                    <a href="#contact" class="btn-primary w-full mt-6 text-center" data-magnetic>Get Your Exact Quote — It's Free</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
         <!-- ═══════════════ BEFORE / AFTER ═══════════════ -->
         <section class="py-24 md:py-32" aria-label="Before and after comparison">
             <div class="max-w-[900px] mx-auto px-6">
@@ -1071,6 +1302,46 @@
         </section>
 
         <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ SVG ROOF BLUEPRINT ═══════════════ -->
+        <section class="py-16 overflow-hidden" aria-label="Roof illustration">
+            <div class="max-w-[900px] mx-auto px-6 text-center">
+                <svg class="blueprint-svg w-full" id="blueprintSvg" viewBox="0 0 800 300" fill="none" style="max-height:250px" aria-hidden="true">
+                    <!-- Foundation -->
+                    <line x1="100" y1="250" x2="700" y2="250" stroke="var(--color-primary)" stroke-width="2" opacity="0.3"/>
+                    <!-- Walls -->
+                    <line x1="150" y1="250" x2="150" y2="130" stroke="var(--color-primary)" stroke-width="2"/>
+                    <line x1="650" y1="250" x2="650" y2="130" stroke="var(--color-primary)" stroke-width="2"/>
+                    <!-- Roof peak -->
+                    <polyline points="100,130 400,30 700,130" stroke="var(--color-primary)" stroke-width="3" fill="none"/>
+                    <!-- Roof tiles (left) -->
+                    <line x1="175" y1="116" x2="400" y2="30" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <line x1="250" y1="102" x2="400" y2="30" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <line x1="325" y1="88" x2="400" y2="30" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <!-- Roof tiles (right) -->
+                    <line x1="625" y1="116" x2="400" y2="30" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <line x1="550" y1="102" x2="400" y2="30" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <line x1="475" y1="88" x2="400" y2="30" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <!-- Window -->
+                    <rect x="250" y="170" width="60" height="70" rx="4" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.5"/>
+                    <line x1="280" y1="170" x2="280" y2="240" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <line x1="250" y1="205" x2="310" y2="205" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <!-- Door -->
+                    <rect x="370" y="180" width="60" height="70" rx="4" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.5"/>
+                    <!-- Window 2 -->
+                    <rect x="490" y="170" width="60" height="70" rx="4" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.5"/>
+                    <line x1="520" y1="170" x2="520" y2="240" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <line x1="490" y1="205" x2="550" y2="205" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+                    <!-- Chimney -->
+                    <rect x="520" y="50" width="40" height="60" stroke="var(--color-primary)" stroke-width="2" fill="none"/>
+                    <!-- Ridge detail -->
+                    <circle cx="400" cy="30" r="5" stroke="var(--color-primary)" stroke-width="2" fill="var(--surface-base)"/>
+                    <!-- Measurement lines -->
+                    <line x1="100" y1="270" x2="700" y2="270" stroke="var(--color-accent)" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+                    <text x="400" y="290" text-anchor="middle" fill="var(--color-accent)" font-size="12" font-family="Plus Jakarta Sans" opacity="0.5">Built to Last — Every Detail Matters</text>
+                </svg>
+            </div>
+        </section>
 
         <!-- ═══════════════ ABOUT / VIDEO ═══════════════ -->
         <section id="about" class="py-24 md:py-32" aria-label="About E J Roofing">
@@ -1124,46 +1395,136 @@
             </div>
         </section>
 
+        <!-- ═══════════════ HORIZONTAL SCROLL SHOWCASE ═══════════════ -->
+        <section class="hscroll-section py-24 md:py-32" aria-label="Project showcase" data-horizontal-scroll>
+            <div class="max-w-[1200px] mx-auto px-6 mb-12" data-reveal="fade-up">
+                <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Featured Projects</p>
+                <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                    Scroll Through Our <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Best Work</span>
+                </h2>
+            </div>
+            <div class="px-6">
+                <div class="hscroll-track" id="hscrollTrack">
+                    <div class="hscroll-card">
+                        <img src="aerial-roof.jpg" alt="Aerial view of completed roof" loading="lazy">
+                        <div class="hscroll-card-overlay"><p class="font-display font-semibold text-white">Complete Re-Roof</p><p class="text-sm text-white/60">Residential • Slate</p></div>
+                    </div>
+                    <div class="hscroll-card">
+                        <img src="home-dusk.jpg" alt="Home at dusk with new roof" loading="lazy">
+                        <div class="hscroll-card-overlay"><p class="font-display font-semibold text-white">Victorian Restoration</p><p class="text-sm text-white/60">Heritage • Clay Tiles</p></div>
+                    </div>
+                    <div class="hscroll-card">
+                        <img src="detail-tiles.jpg" alt="Close-up tile installation" loading="lazy">
+                        <div class="hscroll-card-overlay"><p class="font-display font-semibold text-white">Precision Tiling</p><p class="text-sm text-white/60">Detail Work • Premium</p></div>
+                    </div>
+                    <div class="hscroll-card">
+                        <img src="team-work.jpg" alt="Team on commercial roof" loading="lazy">
+                        <div class="hscroll-card-overlay"><p class="font-display font-semibold text-white">Commercial Flat Roof</p><p class="text-sm text-white/60">Commercial • EPDM</p></div>
+                    </div>
+                    <div class="hscroll-card">
+                        <img src="inspection.jpg" alt="Roof inspection" loading="lazy">
+                        <div class="hscroll-card-overlay"><p class="font-display font-semibold text-white">Survey & Inspection</p><p class="text-sm text-white/60">Assessment • Report</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="section-divider max-w-[1200px] mx-auto"></div>
 
-        <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
-        <section id="testimonials" class="py-24 md:py-32" aria-label="Customer reviews">
+        <!-- ═══════════════ GOOGLE REVIEWS FEED ═══════════════ -->
+        <section id="testimonials" class="py-24 md:py-32" aria-label="Google Reviews">
             <div class="max-w-[1200px] mx-auto px-6">
-                <div class="text-center max-w-2xl mx-auto mb-16" data-reveal="fade-up">
+                <div class="text-center max-w-2xl mx-auto mb-4" data-reveal="fade-up">
                     <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Reviews</p>
                     <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
-                        What Our <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Customers Say</span>
+                        Real Reviews from <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Google</span>
                     </h2>
-                    <p style="color:var(--text-secondary)">Don't just take our word for it — hear from the homeowners we've helped.</p>
+                </div>
+                <!-- Google score header -->
+                <div class="flex flex-col items-center mb-12" data-reveal="fade-up">
+                    <div class="greviews-score" data-counter="4" data-counter-suffix=".9">0</div>
+                    <div class="greviews-stars mb-1">★★★★★</div>
+                    <p class="text-sm" style="color:var(--text-tertiary)">Based on 120+ Google Reviews</p>
+                    <div class="flex items-center gap-2 mt-3">
+                        <svg class="greview-google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        <span class="text-xs font-semibold" style="color:var(--text-tertiary)">Google Reviews</span>
+                    </div>
                 </div>
                 <div class="grid md:grid-cols-3 gap-6" data-stagger-parent>
-                    <div class="testimonial-card" data-stagger-child data-reveal="fade-up" data-tilt>
-                        <div class="quote-mark" aria-hidden="true">"</div>
-                        <div class="stars text-sm mb-4 pt-2">★★★★★</div>
-                        <p class="text-sm leading-relaxed mb-6" style="color:var(--text-secondary)">"Absolutely brilliant job. The team arrived on time, kept the site clean, and the new roof looks fantastic. Wouldn't hesitate to recommend E J Roofing to anyone."</p>
+                    <div class="greview-card" data-stagger-child data-reveal="fade-up" data-tilt>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-sm" style="color:#fbbf24">★★★★★</div>
+                            <svg class="greview-google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">"Absolutely brilliant job. The team arrived on time, kept the site clean, and the new roof looks fantastic. Wouldn't hesitate to recommend E J Roofing to anyone."</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">JW</div>
-                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">James Watson</p><p class="text-xs" style="color:var(--text-tertiary)">Full roof replacement</p></div>
+                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">James Watson</p><p class="text-xs" style="color:var(--text-tertiary)">2 weeks ago</p></div>
                         </div>
                     </div>
-                    <div class="testimonial-card" data-stagger-child data-reveal="fade-up" data-tilt>
-                        <div class="quote-mark" aria-hidden="true">"</div>
-                        <div class="stars text-sm mb-4 pt-2">★★★★★</div>
-                        <p class="text-sm leading-relaxed mb-6" style="color:var(--text-secondary)">"Had a leak that two other roofers couldn't find. E J Roofing diagnosed it in 20 minutes, fixed it the same day, and it hasn't leaked since. Proper tradespeople."</p>
+                    <div class="greview-card" data-stagger-child data-reveal="fade-up" data-tilt>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-sm" style="color:#fbbf24">★★★★★</div>
+                            <svg class="greview-google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">"Had a leak that two other roofers couldn't find. E J Roofing diagnosed it in 20 minutes, fixed it the same day, and it hasn't leaked since. Proper tradespeople."</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">SP</div>
-                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">Sarah Pearson</p><p class="text-xs" style="color:var(--text-tertiary)">Emergency leak repair</p></div>
+                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">Sarah Pearson</p><p class="text-xs" style="color:var(--text-tertiary)">1 month ago</p></div>
                         </div>
                     </div>
-                    <div class="testimonial-card" data-stagger-child data-reveal="fade-up" data-tilt>
-                        <div class="quote-mark" aria-hidden="true">"</div>
-                        <div class="stars text-sm mb-4 pt-2">★★★★★</div>
-                        <p class="text-sm leading-relaxed mb-6" style="color:var(--text-secondary)">"They did the flat roof on our extension and the guttering right round the house. Fair price, quality work, and they even cleaned up before they left. Can't ask for more."</p>
+                    <div class="greview-card" data-stagger-child data-reveal="fade-up" data-tilt>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-sm" style="color:#fbbf24">★★★★★</div>
+                            <svg class="greview-google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">"They did the flat roof on our extension and the guttering right round the house. Fair price, quality work, and they even cleaned up before they left. Can't ask for more."</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">MT</div>
-                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">Mark Thompson</p><p class="text-xs" style="color:var(--text-tertiary)">Flat roof & guttering</p></div>
+                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">Mark Thompson</p><p class="text-xs" style="color:var(--text-tertiary)">3 weeks ago</p></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider max-w-[1200px] mx-auto"></div>
+
+        <!-- ═══════════════ BLOG / TIPS ═══════════════ -->
+        <section class="py-24 md:py-32" aria-label="Roofing tips">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-reveal="fade-up">
+                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Roofing Tips</p>
+                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
+                        Helpful <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Advice</span>
+                    </h2>
+                    <p style="color:var(--text-secondary)">Expert tips to help you look after your roof and know when it's time to call in the pros.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6" data-stagger-parent>
+                    <article class="blog-card" data-stagger-child data-reveal="fade-up">
+                        <div class="blog-card-img"><img src="inspection.jpg" alt="Roof inspection guide" loading="lazy"></div>
+                        <div class="blog-card-body">
+                            <span class="blog-tag mb-3" style="background:rgba(42,122,240,0.1);color:var(--color-primary)">Guide</span>
+                            <h3 class="font-display font-semibold text-lg mb-2" style="color:var(--text-primary)">5 Signs You Need a New Roof</h3>
+                            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">Missing tiles, sagging ridgelines, daylight in the loft, damp patches, and rising energy bills are all red flags. Spot them early and save thousands.</p>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-stagger-child data-reveal="fade-up">
+                        <div class="blog-card-img"><img src="detail-tiles.jpg" alt="Seasonal roof maintenance" loading="lazy"></div>
+                        <div class="blog-card-body">
+                            <span class="blog-tag mb-3" style="background:rgba(6,182,212,0.1);color:var(--color-accent)">Maintenance</span>
+                            <h3 class="font-display font-semibold text-lg mb-2" style="color:var(--text-primary)">Seasonal Roof Maintenance Checklist</h3>
+                            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">Clear gutters in autumn, check for frost damage in spring, inspect flashings after storms. A simple routine keeps your roof lasting decades longer.</p>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-stagger-child data-reveal="fade-up">
+                        <div class="blog-card-img"><img src="home-dusk.jpg" alt="Choosing roof materials" loading="lazy"></div>
+                        <div class="blog-card-body">
+                            <span class="blog-tag mb-3" style="background:rgba(168,85,247,0.1);color:#a855f7">Materials</span>
+                            <h3 class="font-display font-semibold text-lg mb-2" style="color:var(--text-primary)">Slate vs Concrete: Which Roof Tile?</h3>
+                            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">Natural slate lasts 100+ years but costs more upfront. Concrete tiles are affordable and durable. Here's how to choose the right one for your home.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -1206,6 +1567,22 @@
                             <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/15 flex items-center justify-center flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><p class="text-xs uppercase tracking-wider mb-0.5" style="color:var(--text-tertiary)">Email</p><a href="mailto:ellisjessamine51@gmail.com" class="font-semibold hover:text-brand-400 transition-colors" style="color:var(--text-primary)">ellisjessamine51@gmail.com</a></div></div>
                             <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/15 flex items-center justify-center flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a7af0" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><p class="text-xs uppercase tracking-wider mb-0.5" style="color:var(--text-tertiary)">Hours</p><p class="font-semibold" style="color:var(--text-primary)">Mon–Sat: 7am – 6pm</p></div></div>
                         </div>
+                        <!-- Service Area -->
+                        <div data-reveal="fade-up">
+                            <p class="text-sm font-semibold mb-3" style="color:var(--text-primary)">Areas We Cover</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="area-tag">Carlisle</span>
+                                <span class="area-tag">Penrith</span>
+                                <span class="area-tag">Wigton</span>
+                                <span class="area-tag">Brampton</span>
+                                <span class="area-tag">Dalston</span>
+                                <span class="area-tag">Thursby</span>
+                                <span class="area-tag">Longtown</span>
+                                <span class="area-tag">Wetheral</span>
+                                <span class="area-tag">Scotby</span>
+                                <span class="area-tag">+ Surrounding Areas</span>
+                            </div>
+                        </div>
                         <!-- Google Maps -->
                         <div class="map-container" data-reveal="fade-up">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d150000!2d-2.9!3d54.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="E J Roofing service area map"></iframe>
@@ -1228,6 +1605,15 @@
             </div>
         </section>
     </main>
+
+    <!-- ═══ LIGHTBOX ═══ -->
+    <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l12 12M16 4L4 16"/></svg></button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4l-6 6 6 6"/></svg></button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 4l6 6-6 6"/></svg></button>
+        <img id="lightboxImg" src="" alt="Gallery image fullscreen">
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
 
     <!-- ═══ FOOTER ═══ -->
     <footer class="py-12" style="border-top:1px solid var(--surface-border)" aria-label="Footer">
@@ -1544,6 +1930,227 @@
                 if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -64 }); }
             });
         });
+
+        // ══════════════════════════════════════════
+        // EMERGENCY BANNER
+        // ══════════════════════════════════════════
+        (function() {
+            const banner = document.getElementById('emergencyBanner');
+            const closeBtn = document.getElementById('bannerClose');
+            const nav = document.querySelector('.nav');
+            if (sessionStorage.getItem('ej-banner-dismissed')) return;
+            setTimeout(() => {
+                banner.classList.add('visible');
+                nav.style.top = banner.offsetHeight + 'px';
+            }, 2000);
+            closeBtn.addEventListener('click', () => {
+                banner.classList.remove('visible');
+                nav.style.top = '0';
+                sessionStorage.setItem('ej-banner-dismissed', '1');
+            });
+        })();
+
+        // ══════════════════════════════════════════
+        // LIGHTBOX GALLERY
+        // ══════════════════════════════════════════
+        (function() {
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightboxImg');
+            const lbCounter = document.getElementById('lightboxCounter');
+            const images = Array.from(document.querySelectorAll('.gallery-item img'));
+            let currentIdx = 0;
+
+            function openLightbox(idx) {
+                currentIdx = idx;
+                lbImg.src = images[idx].src;
+                lbImg.alt = images[idx].alt;
+                lbCounter.textContent = (idx + 1) + ' / ' + images.length;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            function navigate(dir) {
+                currentIdx = (currentIdx + dir + images.length) % images.length;
+                lbImg.src = images[currentIdx].src;
+                lbImg.alt = images[currentIdx].alt;
+                lbCounter.textContent = (currentIdx + 1) + ' / ' + images.length;
+            }
+
+            images.forEach((img, i) => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => openLightbox(i));
+            });
+            document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('lightboxPrev').addEventListener('click', () => navigate(-1));
+            document.getElementById('lightboxNext').addEventListener('click', () => navigate(1));
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigate(-1);
+                if (e.key === 'ArrowRight') navigate(1);
+            });
+
+            // Touch swipe support
+            let touchStartX = 0;
+            lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+            lightbox.addEventListener('touchend', (e) => {
+                const diff = e.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(diff) > 50) navigate(diff > 0 ? -1 : 1);
+            });
+        })();
+
+        // ══════════════════════════════════════════
+        // QUOTE CALCULATOR
+        // ══════════════════════════════════════════
+        (function() {
+            const typeGroup = document.getElementById('calcType');
+            const materialGroup = document.getElementById('calcMaterial');
+            const sizeSlider = document.getElementById('calcSize');
+            const sizeLabel = document.getElementById('calcSizeLabel');
+            const resultEl = document.getElementById('calcResult');
+
+            function selectOption(group, el) {
+                group.querySelectorAll('.calc-option').forEach(o => o.classList.remove('selected'));
+                el.classList.add('selected');
+                updateCalc();
+            }
+            function updateCalc() {
+                const type = typeGroup.querySelector('.selected');
+                const material = materialGroup.querySelector('.selected');
+                const size = parseInt(sizeSlider.value);
+                const base = parseInt(type.dataset.base);
+                const mult = parseFloat(material.dataset.mult);
+                const sizeMultiplier = size / 80;
+                const estimate = Math.round(base * mult * sizeMultiplier);
+                const low = Math.round(estimate * 0.8);
+                const high = Math.round(estimate * 1.2);
+                resultEl.textContent = '£' + low.toLocaleString() + ' – £' + high.toLocaleString();
+                sizeLabel.textContent = size + 'm²';
+            }
+
+            typeGroup.querySelectorAll('.calc-option').forEach(o => o.addEventListener('click', () => selectOption(typeGroup, o)));
+            materialGroup.querySelectorAll('.calc-option').forEach(o => o.addEventListener('click', () => selectOption(materialGroup, o)));
+            sizeSlider.addEventListener('input', updateCalc);
+        })();
+
+        // ══════════════════════════════════════════
+        // HORIZONTAL SCROLL (GSAP)
+        // ══════════════════════════════════════════
+        (function() {
+            const track = document.getElementById('hscrollTrack');
+            if (!track || window.innerWidth < 768) return;
+            const totalScroll = track.scrollWidth - window.innerWidth + 100;
+            gsap.to(track, {
+                x: () => -totalScroll,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: track.closest('section'),
+                    start: 'top top',
+                    end: () => '+=' + totalScroll,
+                    scrub: 1,
+                    pin: true,
+                    invalidateOnRefresh: true
+                }
+            });
+        })();
+
+        // ══════════════════════════════════════════
+        // SVG BLUEPRINT SCROLL ANIMATION
+        // ══════════════════════════════════════════
+        (function() {
+            const svg = document.getElementById('blueprintSvg');
+            if (!svg) return;
+            const paths = svg.querySelectorAll('line, polyline, rect, circle');
+            paths.forEach(p => {
+                const len = p.getTotalLength ? p.getTotalLength() : 300;
+                p.style.strokeDasharray = len;
+                p.style.strokeDashoffset = len;
+            });
+            gsap.to(paths, {
+                strokeDashoffset: 0,
+                stagger: 0.05,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: { trigger: svg, start: 'top 80%', once: true }
+            });
+        })();
+
+        // ══════════════════════════════════════════
+        // PARTICLE RAIN (Hero)
+        // ══════════════════════════════════════════
+        (function() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const count = window.innerWidth < 768 ? 30 : 60;
+
+            function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+            resize(); window.addEventListener('resize', resize);
+
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 0.5,
+                    speedY: Math.random() * 0.5 + 0.2,
+                    speedX: Math.random() * 0.3 - 0.15,
+                    opacity: Math.random() * 0.5 + 0.1
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.y += p.speedY;
+                    p.x += p.speedX;
+                    if (p.y > canvas.height) { p.y = -5; p.x = Math.random() * canvas.width; }
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(42, 122, 240, ' + p.opacity + ')';
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+
+        // ══════════════════════════════════════════
+        // CURSOR TRAIL
+        // ══════════════════════════════════════════
+        (function() {
+            if ('ontouchstart' in window) return;
+            const trailCount = 8;
+            const trails = [];
+            for (let i = 0; i < trailCount; i++) {
+                const el = document.createElement('div');
+                el.className = 'cursor-trail';
+                el.style.width = (8 - i) + 'px';
+                el.style.height = (8 - i) + 'px';
+                el.style.opacity = '0';
+                document.body.appendChild(el);
+                trails.push({ el, x: 0, y: 0 });
+            }
+            let mx = 0, my = 0;
+            document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+            function animateTrail() {
+                let prevX = mx, prevY = my;
+                trails.forEach((t, i) => {
+                    const speed = 0.35 - (i * 0.03);
+                    t.x += (prevX - t.x) * speed;
+                    t.y += (prevY - t.y) * speed;
+                    t.el.style.transform = 'translate(' + (t.x - 4) + 'px, ' + (t.y - 4) + 'px)';
+                    t.el.style.opacity = (0.4 - i * 0.05).toString();
+                    prevX = t.x; prevY = t.y;
+                });
+                requestAnimationFrame(animateTrail);
+            }
+            animateTrail();
+        })();
     </script>
 </body>
 </html>
