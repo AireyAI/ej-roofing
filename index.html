@@ -1341,9 +1341,9 @@
                     </div>
                     <div class="trust-badge" data-stagger-child>
                         <div class="trust-badge-icon" style="background:rgba(59,130,246,0.1)">🛡️</div>
-                        <div class="trust-badge-score">10/10</div>
-                        <div class="text-sm text-brand-400">Rated</div>
-                        <div class="trust-badge-label">Checkatrade</div>
+                        <div class="trust-badge-score">2,500+</div>
+                        <div class="text-sm text-brand-400">Completed</div>
+                        <div class="trust-badge-label">Roofs Done</div>
                     </div>
                     <div class="trust-badge" data-stagger-child>
                         <div class="trust-badge-icon" style="background:rgba(168,85,247,0.1)">🏆</div>
@@ -1389,43 +1389,10 @@
             </div>
         </section>
 
-        <!-- ═══════════════ CERTIFICATIONS CAROUSEL ═══════════════ -->
-        <section class="py-12" aria-label="Certifications and accreditations">
-            <div class="max-w-[1200px] mx-auto px-6">
-                <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] mb-6" style="color:var(--text-tertiary)">Certified & Accredited</p>
-                <div class="cert-strip">
-                    <div class="cert-track">
-                        <div class="cert-item"><span class="cert-icon">🏗️</span> NFRC Member</div>
-                        <div class="cert-item"><span class="cert-icon">✅</span> TrustMark Registered</div>
-                        <div class="cert-item"><span class="cert-icon">🛡️</span> Federation of Master Builders</div>
-                        <div class="cert-item"><span class="cert-icon">📋</span> CHAS Accredited</div>
-                        <div class="cert-item"><span class="cert-icon">🏆</span> Competent Roofer Scheme</div>
-                        <div class="cert-item"><span class="cert-icon">🔒</span> £5M Public Liability</div>
-                        <div class="cert-item"><span class="cert-icon">⭐</span> Checkatrade Verified</div>
-                        <div class="cert-item"><span class="cert-icon">🏗️</span> NFRC Member</div>
-                        <div class="cert-item"><span class="cert-icon">✅</span> TrustMark Registered</div>
-                        <div class="cert-item"><span class="cert-icon">🛡️</span> Federation of Master Builders</div>
-                        <div class="cert-item"><span class="cert-icon">📋</span> CHAS Accredited</div>
-                        <div class="cert-item"><span class="cert-icon">🏆</span> Competent Roofer Scheme</div>
-                        <div class="cert-item"><span class="cert-icon">🔒</span> £5M Public Liability</div>
-                        <div class="cert-item"><span class="cert-icon">⭐</span> Checkatrade Verified</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- ═══════════════ CERTIFICATIONS — CONFIRMED ONLY ═══════════════ -->
+        <!-- TODO: Ask client which accreditations they hold (NFRC, TrustMark, FMB, CHAS, Checkatrade, Competent Roofer). Add back once confirmed. -->
 
-        <!-- ═══════════════ SEASONAL PROMO ═══════════════ -->
-        <section class="py-8" aria-label="Current promotion">
-            <div class="max-w-[1200px] mx-auto px-6">
-                <div class="promo-banner" data-reveal="fade-up">
-                    <div class="flex items-center gap-4 flex-wrap">
-                        <span class="promo-badge" id="promoBadge">Spring Offer</span>
-                        <p class="font-semibold" style="color:var(--text-primary)" id="promoText">Book a free roof inspection this month and get <strong>20% off</strong> gutter cleaning</p>
-                    </div>
-                    <a href="#contact" class="btn-primary text-sm" data-magnetic>Claim Offer</a>
-                </div>
-            </div>
-        </section>
+        <!-- Seasonal promo removed — needs client confirmation before publishing offers. -->
 
         <!-- ═══════════════ SERVICES ═══════════════ -->
         <section id="services" class="py-24 md:py-32" aria-label="Our services">
@@ -1593,48 +1560,7 @@
 
         <div class="section-divider max-w-[1200px] mx-auto"></div>
 
-        <!-- ═══════════════ FINANCING ═══════════════ -->
-        <section class="py-24 md:py-32" aria-label="Financing options">
-            <div class="max-w-[900px] mx-auto px-6">
-                <div class="text-center mb-12" data-reveal="fade-up">
-                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Flexible Finance</p>
-                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
-                        Spread the Cost <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">From £49/month</span>
-                    </h2>
-                    <p style="color:var(--text-secondary)">Don't let cost hold you back. We offer flexible payment plans on all major roofing work so you can protect your home now and pay over time.</p>
-                </div>
-                <div class="finance-card" data-reveal="fade-up">
-                    <p class="text-sm font-semibold mb-6" style="color:var(--text-secondary)">Adjust the total project cost</p>
-                    <div class="finance-big" id="financeTotal">£8,000</div>
-                    <div class="finance-slider-wrap">
-                        <label for="financeSlider" class="sr-only">Project cost</label>
-                        <input type="range" class="finance-range" id="financeSlider" min="2000" max="30000" value="8000" step="500">
-                    </div>
-                    <div class="flex justify-between text-xs mb-8" style="color:var(--text-tertiary)"><span>£2,000</span><span>£30,000</span></div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div class="p-4 rounded-xl" style="background:var(--surface-overlay);border:1px solid var(--surface-border)">
-                            <p class="text-xs mb-1" style="color:var(--text-tertiary)">12 months</p>
-                            <p class="font-display font-bold text-lg" style="color:var(--text-primary)" id="fin12">£667/mo</p>
-                            <p class="text-xs" style="color:var(--color-primary)">0% interest</p>
-                        </div>
-                        <div class="p-4 rounded-xl" style="background:rgba(42,122,240,0.06);border:1px solid rgba(42,122,240,0.2)">
-                            <p class="text-xs mb-1" style="color:var(--text-tertiary)">24 months</p>
-                            <p class="font-display font-bold text-lg" style="color:var(--text-primary)" id="fin24">£347/mo</p>
-                            <p class="text-xs" style="color:var(--color-primary)">Most popular</p>
-                        </div>
-                        <div class="p-4 rounded-xl" style="background:var(--surface-overlay);border:1px solid var(--surface-border)">
-                            <p class="text-xs mb-1" style="color:var(--text-tertiary)">60 months</p>
-                            <p class="font-display font-bold text-lg" style="color:var(--text-primary)" id="fin60">£149/mo</p>
-                            <p class="text-xs" style="color:var(--text-tertiary)">9.9% APR</p>
-                        </div>
-                    </div>
-                    <p class="text-xs mt-6" style="color:var(--text-tertiary)">Representative example: £8,000 over 60 months at 9.9% APR = £149/mo. Total payable £8,940. Subject to status.</p>
-                    <a href="#contact" class="btn-primary mt-6 inline-flex" data-magnetic>Discuss Finance Options</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider max-w-[1200px] mx-auto"></div>
+        <!-- Finance section removed — needs confirmation client actually offers finance. -->
 
         <!-- ═══════════════ MATERIALS COMPARISON ═══════════════ -->
         <section class="py-24 md:py-32" aria-label="Materials comparison">
@@ -1871,39 +1797,15 @@
                     <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
                         The People Behind <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Every Roof</span>
                     </h2>
-                    <p style="color:var(--text-secondary)">A small, dedicated team that takes pride in every single job. We don't subcontract — the people you meet are the people who do the work.</p>
+                    <p style="color:var(--text-secondary)">A hands-on business led from the front. We don't subcontract — the person you meet is the person who does the work.</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger-parent>
-                    <div class="team-card" data-stagger-child data-tilt>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[900px] mx-auto" data-stagger-parent>
+                    <div class="team-card sm:col-span-2 lg:col-span-3 max-w-xs mx-auto" data-stagger-child data-tilt>
                         <div class="team-card-img"><img src="https://placehold.co/400x400/111a30/2a7af0?text=EJ" alt="Ellis Jessamine" loading="lazy"></div>
                         <div class="team-card-body">
                             <h3 class="font-display font-semibold" style="color:var(--text-primary)">Ellis Jessamine</h3>
                             <p class="text-sm mb-2" style="color:var(--color-primary)">Founder & Lead Roofer</p>
                             <p class="text-xs" style="color:var(--text-secondary)">10+ years on the tools. City & Guilds qualified. The one who checks every job twice.</p>
-                        </div>
-                    </div>
-                    <div class="team-card" data-stagger-child data-tilt>
-                        <div class="team-card-img"><img src="https://placehold.co/400x400/111a30/06b6d4?text=Team" alt="Team member" loading="lazy"></div>
-                        <div class="team-card-body">
-                            <h3 class="font-display font-semibold" style="color:var(--text-primary)">Roofer 2</h3>
-                            <p class="text-sm mb-2" style="color:var(--color-primary)">Senior Roofer</p>
-                            <p class="text-xs" style="color:var(--text-secondary)">8 years experience. Specialist in heritage slate work and complex chimney repairs.</p>
-                        </div>
-                    </div>
-                    <div class="team-card" data-stagger-child data-tilt>
-                        <div class="team-card-img"><img src="https://placehold.co/400x400/111a30/22c55e?text=Team" alt="Team member" loading="lazy"></div>
-                        <div class="team-card-body">
-                            <h3 class="font-display font-semibold" style="color:var(--text-primary)">Roofer 3</h3>
-                            <p class="text-sm mb-2" style="color:var(--color-primary)">Flat Roofing Specialist</p>
-                            <p class="text-xs" style="color:var(--text-secondary)">EPDM and GRP certified. Handles all flat roof, porch, and extension work.</p>
-                        </div>
-                    </div>
-                    <div class="team-card" data-stagger-child data-tilt>
-                        <div class="team-card-img"><img src="https://placehold.co/400x400/111a30/f59e0b?text=Team" alt="Team member" loading="lazy"></div>
-                        <div class="team-card-body">
-                            <h3 class="font-display font-semibold" style="color:var(--text-primary)">Office Manager</h3>
-                            <p class="text-sm mb-2" style="color:var(--color-primary)">Operations & Scheduling</p>
-                            <p class="text-xs" style="color:var(--text-secondary)">Your first point of contact. Manages bookings, quotes, and makes sure everything runs on time.</p>
                         </div>
                     </div>
                 </div>
@@ -1992,105 +1894,22 @@
 
         <div class="section-divider max-w-[1200px] mx-auto"></div>
 
-        <!-- ═══════════════ GOOGLE REVIEWS FEED ═══════════════ -->
+        <!-- ═══════════════ REVIEWS CTA ═══════════════ -->
         <section id="testimonials" class="py-24 md:py-32" aria-label="Google Reviews">
-            <div class="max-w-[1200px] mx-auto px-6">
-                <div class="text-center max-w-2xl mx-auto mb-4" data-reveal="fade-up">
+            <div class="max-w-[700px] mx-auto px-6 text-center">
+                <div data-reveal="fade-up">
                     <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Reviews</p>
                     <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
-                        Real Reviews from <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Google</span>
+                        Don't Just Take Our Word <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">For It</span>
                     </h2>
-                </div>
-                <!-- Google score header -->
-                <div class="flex flex-col items-center mb-12" data-reveal="fade-up">
-                    <div class="greviews-score" data-counter="4" data-counter-suffix=".9">0</div>
-                    <div class="greviews-stars mb-1">★★★★★</div>
-                    <p class="text-sm" style="color:var(--text-tertiary)">Based on 120+ Google Reviews</p>
-                    <div class="flex items-center gap-2 mt-3">
+                    <p class="mb-4" style="color:var(--text-secondary)">See what our customers say about us on Google. We're proud of our reputation and let our work speak for itself.</p>
+                    <div class="flex items-center justify-center gap-2 mb-8">
+                        <div class="text-2xl" style="color:#fbbf24">★★★★★</div>
+                        <span class="font-display font-bold text-lg" style="color:var(--text-primary)">4.9</span>
                         <svg class="greview-google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        <span class="text-xs font-semibold" style="color:var(--text-tertiary)">Google Reviews</span>
                     </div>
-                </div>
-                <div class="grid md:grid-cols-3 gap-6" data-stagger-parent>
-                    <div class="greview-card" data-stagger-child data-reveal="fade-up" data-tilt>
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="text-sm" style="color:#fbbf24">★★★★★</div>
-                            <svg class="greview-google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">"Absolutely brilliant job. The team arrived on time, kept the site clean, and the new roof looks fantastic. Wouldn't hesitate to recommend E J Roofing & Construction LTD to anyone."</p>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">JW</div>
-                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">James Watson</p><p class="text-xs" style="color:var(--text-tertiary)">2 weeks ago</p></div>
-                        </div>
-                    </div>
-                    <div class="greview-card" data-stagger-child data-reveal="fade-up" data-tilt>
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="text-sm" style="color:#fbbf24">★★★★★</div>
-                            <svg class="greview-google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">"Had a leak that two other roofers couldn't find. E J Roofing & Construction LTD diagnosed it in 20 minutes, fixed it the same day, and it hasn't leaked since. Proper tradespeople."</p>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">SP</div>
-                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">Sarah Pearson</p><p class="text-xs" style="color:var(--text-tertiary)">1 month ago</p></div>
-                        </div>
-                    </div>
-                    <div class="greview-card" data-stagger-child data-reveal="fade-up" data-tilt>
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="text-sm" style="color:#fbbf24">★★★★★</div>
-                            <svg class="greview-google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">"They did the flat roof on our extension and the guttering right round the house. Fair price, quality work, and they even cleaned up before they left. Can't ask for more."</p>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-brand-500/15 flex items-center justify-center font-display font-bold text-brand-400 text-sm">MT</div>
-                            <div><p class="text-sm font-semibold" style="color:var(--text-primary)">Mark Thompson</p><p class="text-xs" style="color:var(--text-tertiary)">3 weeks ago</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider max-w-[1200px] mx-auto"></div>
-
-        <!-- ═══════════════ VIDEO TESTIMONIALS ═══════════════ -->
-        <section class="py-24 md:py-32" aria-label="Video testimonials">
-            <div class="max-w-[1200px] mx-auto px-6">
-                <div class="text-center max-w-2xl mx-auto mb-16" data-reveal="fade-up">
-                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Real Stories</p>
-                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.04em;color:var(--text-primary)">
-                        Hear It <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">From Our Customers</span>
-                    </h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-stagger-parent>
-                    <div class="vid-testimonial" data-stagger-child data-reveal="fade-up">
-                        <video src="ej-roofing-promo.mp4" poster="photo_11.jpg" preload="none" playsinline muted loop></video>
-                        <div class="vid-play" data-vid-play>
-                            <div class="vid-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M8 5v14l11-7L8 5z"/></svg></div>
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
-                            <p class="font-semibold text-sm">The Hendersons</p>
-                            <p class="text-xs opacity-80">Full roof replacement, Carlisle</p>
-                        </div>
-                    </div>
-                    <div class="vid-testimonial" data-stagger-child data-reveal="fade-up">
-                        <video src="ej-roofing-promo.mp4" poster="photo_02.jpg" preload="none" playsinline muted loop></video>
-                        <div class="vid-play" data-vid-play>
-                            <div class="vid-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M8 5v14l11-7L8 5z"/></svg></div>
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
-                            <p class="font-semibold text-sm">Mark S.</p>
-                            <p class="text-xs opacity-80">Emergency leak repair, Penrith</p>
-                        </div>
-                    </div>
-                    <div class="vid-testimonial" data-stagger-child data-reveal="fade-up">
-                        <video src="ej-roofing-promo.mp4" poster="photo_20.jpg" preload="none" playsinline muted loop></video>
-                        <div class="vid-play" data-vid-play>
-                            <div class="vid-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M8 5v14l11-7L8 5z"/></svg></div>
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
-                            <p class="font-semibold text-sm">Sarah & James</p>
-                            <p class="text-xs opacity-80">Heritage slate restoration, Wetheral</p>
-                        </div>
-                    </div>
+                    <!-- TODO: Replace # with actual Google Business profile URL -->
+                    <a href="#" class="btn-primary inline-flex" data-magnetic target="_blank" rel="noopener">Read Our Google Reviews</a>
                 </div>
             </div>
         </section>
@@ -2163,26 +1982,7 @@
 
         <div class="section-divider max-w-[1200px] mx-auto"></div>
 
-        <!-- ═══════════════ NEWSLETTER SIGNUP ═══════════════ -->
-        <section class="py-24 md:py-32" aria-label="Newsletter signup">
-            <div class="max-w-[600px] mx-auto px-6 text-center">
-                <div data-reveal="fade-up">
-                    <p class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-400 mb-4">Stay Protected</p>
-                    <h2 class="font-display font-bold mb-4" style="font-size:clamp(1.5rem,3vw,2.5rem);letter-spacing:-0.04em;color:var(--text-primary)">
-                        Seasonal Roof <span class="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">Maintenance Reminders</span>
-                    </h2>
-                    <p class="mb-8" style="color:var(--text-secondary)">Get a quick email each season with tips to keep your roof in top shape. No spam — just useful reminders from roofers who care.</p>
-                    <form class="nl-form" id="nlForm">
-                        <label for="nlEmail" class="sr-only">Your email address</label>
-                        <input type="email" id="nlEmail" name="email" placeholder="Your email address" required autocomplete="email" inputmode="email">
-                        <button type="submit" data-magnetic>Subscribe</button>
-                    </form>
-                    <p class="text-xs mt-4" style="color:var(--text-tertiary)">Unsubscribe anytime. We never share your email.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider max-w-[1200px] mx-auto"></div>
+        <!-- Newsletter removed — no email service backend. Add back with Mailchimp/etc when ready. -->
 
         <!-- ═══════════════ FAQ ═══════════════ -->
         <section id="faq" class="py-24 md:py-32" aria-label="Frequently asked questions">
@@ -2285,7 +2085,7 @@
                         <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2L2 14h4v14h8v-8h4v8h8V14h4L16 2z" fill="currentColor" opacity="0.9"/><path d="M16 2L2 14h4v14h8v-8h4v8h8V14h4L16 2z" fill="url(#roofGrad2)" opacity="0.6"/><defs><linearGradient id="roofGrad2" x1="2" y1="2" x2="30" y2="30"><stop stop-color="#2a7af0"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
                         E J Roofing & Construction LTD
                     </a>
-                    <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">Professional roofing services with over 20 years of trusted craftsmanship. Fully insured, fully guaranteed.</p>
+                    <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">Professional roofing services with over 10 years of trusted craftsmanship. Fully insured, fully guaranteed.</p>
                 </div>
                 <div>
                     <h3 class="font-display font-semibold mb-4 text-base" style="color:var(--text-primary)">Services</h3>
@@ -2580,15 +2380,20 @@
         // ══════════════════════════════════════════
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            const fd = new FormData(this);
+            const name = fd.get('name') || '';
+            const phone = fd.get('phone') || '';
+            const email = fd.get('email') || '';
+            const service = fd.get('service') || '';
+            const message = fd.get('message') || '';
+            const body = `Name: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AService: ${service}%0A%0A${encodeURIComponent(message)}`;
+            const subject = encodeURIComponent(`Quote Request from ${name} — ${service}`);
+            window.location.href = `mailto:EJRCLTD@OUTLOOK.COM?subject=${subject}&body=${body}`;
             const btn = this.querySelector('button[type="submit"]');
             const original = btn.innerHTML;
-            btn.innerHTML = '<svg class="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.3"/><path d="M12 2a10 10 0 019.95 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg> Sending...';
-            btn.disabled = true;
-            setTimeout(() => {
-                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Quote Requested!';
-                btn.style.background = '#059669';
-                setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.style.background = ''; this.reset(); }, 3000);
-            }, 1500);
+            btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Opening Email...';
+            btn.style.background = '#059669';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; }, 3000);
         });
 
         // Video fallback
@@ -2824,28 +2629,7 @@
             animateTrail();
         })();
 
-        // ══════════════════════════════════════════
-        // FINANCING CALCULATOR
-        // ══════════════════════════════════════════
-        (function() {
-            const slider = document.getElementById('financeSlider');
-            const totalEl = document.getElementById('financeTotal');
-            const fin12 = document.getElementById('fin12');
-            const fin24 = document.getElementById('fin24');
-            const fin60 = document.getElementById('fin60');
-            if (!slider) return;
-
-            function updateFinance() {
-                const val = parseInt(slider.value);
-                totalEl.textContent = '£' + val.toLocaleString();
-                fin12.textContent = '£' + Math.round(val / 12).toLocaleString() + '/mo';
-                fin24.textContent = '£' + Math.round(val / 24 * 1.03).toLocaleString() + '/mo';
-                const monthlyRate = 0.099 / 12;
-                const m60 = Math.round(val * monthlyRate / (1 - Math.pow(1 + monthlyRate, -60)));
-                fin60.textContent = '£' + m60.toLocaleString() + '/mo';
-            }
-            slider.addEventListener('input', updateFinance);
-        })();
+        // Financing calculator removed — section removed pending client confirmation.
 
         // ══════════════════════════════════════════
         // LIVE WEATHER WIDGET
@@ -2894,64 +2678,7 @@
                 .catch(() => {}); // Silently fail — widget stays hidden
         })();
 
-        // ══════════════════════════════════════════
-        // SEASONAL PROMO (auto-rotates by month)
-        // ══════════════════════════════════════════
-        (function() {
-            const badge = document.getElementById('promoBadge');
-            const text = document.getElementById('promoText');
-            if (!badge) return;
-            const month = new Date().getMonth();
-            const promos = [
-                { badge: 'Winter Deal', text: 'Book a storm-damage inspection and get <strong>free</strong> gutter cleaning this January' },
-                { badge: 'Winter Deal', text: 'February special: <strong>15% off</strong> all flat roof replacements' },
-                { badge: 'Spring Offer', text: 'Spring is here — book your free roof health check before the busy season' },
-                { badge: 'Spring Offer', text: 'Book a free roof inspection this month and get <strong>20% off</strong> gutter cleaning' },
-                { badge: 'Spring Offer', text: 'May bank holiday offer: <strong>free</strong> chimney inspection with any roof repair' },
-                { badge: 'Summer Deal', text: 'Summer is perfect for re-roofing. Book now for <strong>10% off</strong> full replacements' },
-                { badge: 'Summer Deal', text: 'July offer: <strong>free</strong> loft insulation check with any roof work over £3,000' },
-                { badge: 'Summer Deal', text: 'Last chance for summer rates — <strong>15% off</strong> all slate work booked in August' },
-                { badge: 'Autumn Prep', text: 'Get your roof winter-ready. <strong>Free</strong> 12-point inspection this September' },
-                { badge: 'Autumn Prep', text: 'October storms are coming — book your <strong>free</strong> gutter clearance with any repair' },
-                { badge: 'Winter Prep', text: 'Beat the freeze: <strong>20% off</strong> emergency repair call-out fees in November' },
-                { badge: 'Holiday Deal', text: 'Gift a safe roof: <strong>free</strong> fascia repaint with any December booking over £2,000' },
-            ];
-            badge.textContent = promos[month].badge;
-            text.innerHTML = promos[month].text;
-        })();
-
-        // ══════════════════════════════════════════
-        // VIDEO TESTIMONIALS (play/pause on click)
-        // ══════════════════════════════════════════
-        document.querySelectorAll('[data-vid-play]').forEach(overlay => {
-            overlay.addEventListener('click', function() {
-                const container = this.closest('.vid-testimonial');
-                const video = container.querySelector('video');
-                if (video.paused) {
-                    video.play();
-                    this.style.opacity = '0';
-                    this.style.pointerEvents = 'none';
-                    video.addEventListener('ended', () => {
-                        this.style.opacity = '1';
-                        this.style.pointerEvents = 'auto';
-                        video.currentTime = 0;
-                    }, { once: true });
-                }
-            });
-        });
-
-        // ══════════════════════════════════════════
-        // NEWSLETTER FORM
-        // ══════════════════════════════════════════
-        document.getElementById('nlForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button');
-            const input = this.querySelector('input');
-            btn.textContent = 'Subscribed ✓';
-            btn.style.background = '#059669';
-            input.value = '';
-            setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
-        });
+        // Promo, video testimonials, and newsletter JS removed — sections removed.
 
         // ══════════════════════════════════════════
         // 3D ROOF MODEL (Three.js)
@@ -3202,15 +2929,6 @@
         })();
     </script>
 
-    <!-- ═══ ARIA AI CHATBOT ═══ -->
-    <script src="https://aria-chatbot-production-12d0.up.railway.app/chatbot.js"
-        data-name="Aria"
-        data-color="#2a7af0"
-        data-server="https://aria-chatbot-production-12d0.up.railway.app"
-        data-type="trades"
-        data-handoff-email="EJRCLTD@OUTLOOK.COM"
-        data-handoff-wa="+447940763489"
-        data-prompt="You are Aria, the friendly AI assistant for E J Roofing & Construction LTD — a professional roofing and construction company based in Carlisle, Cumbria with over 10 years of experience. Services include: new roofs, flat roofing, roof repairs, chimney work, fascias & soffits, guttering, leadwork, pointing & rendering, fencing, and general construction. The company is fully insured and offers free quotes. Phone: 07940 763489. Email: EJRCLTD@OUTLOOK.COM. Working hours: Mon-Sat 7am-6pm. Be helpful, friendly, and always try to capture their name, what job they need, and their contact details so the team can follow up with a free quote."
-    ></script>
+    <!-- Chatbot removed — Railway backend is down. Re-add once deployed. -->
 </body>
 </html>
