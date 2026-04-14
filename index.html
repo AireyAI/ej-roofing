@@ -60,8 +60,9 @@
         })();
     </script>
 
-    <!-- Preload welcome poster + hint video download -->
+    <!-- Preload welcome poster + video -->
     <link rel="preload" as="image" href="photo_02.jpg" fetchpriority="high">
+    <link rel="preload" as="video" href="welcome-video.mp4" fetchpriority="high">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -250,9 +251,9 @@
         .welcome-video.loaded { opacity: 1; z-index: 1; }
         .welcome-poster-fallback {
             opacity: 1;
-            z-index: 0;
+            z-index: 1;
         }
-        .welcome-poster-fallback.hidden { opacity: 0; transition: opacity 0.6s ease; }
+        .welcome-poster-fallback.hidden { opacity: 0; z-index: 0; transition: opacity 0.6s ease; }
         .welcome-overlay {
             position: absolute;
             inset: 0;
@@ -1173,7 +1174,7 @@
 
     <!-- ═══ WELCOME PAGE ═══ -->
     <div id="welcomePage" aria-label="Welcome to E J Roofing & Construction LTD">
-        <video class="welcome-video" id="welcomeVideo" autoplay muted playsinline preload="auto" poster="photo_02.jpg" webkit-playsinline fetchpriority="high">
+        <video class="welcome-video" id="welcomeVideo" autoplay muted playsinline preload="auto" webkit-playsinline fetchpriority="high">
             <source src="welcome-video.mp4" type="video/mp4">
         </video>
         <img class="welcome-video welcome-poster-fallback" src="photo_02.jpg" alt="" aria-hidden="true" id="welcomePoster">
@@ -2148,7 +2149,8 @@
 
             function showVideo() {
                 video.classList.add('loaded');
-                poster.classList.add('hidden');
+                // Small delay before hiding poster — ensures video frame is fully painted
+                setTimeout(() => poster.classList.add('hidden'), 150);
             }
 
             function tryPlay() {
@@ -2157,15 +2159,17 @@
                 if (playPromise !== undefined) {
                     playPromise.then(() => {
                         videoPlaying = true;
-                        // Wait for the first actual frame to paint before crossfading
+                        // Wait for 2 actual video frames to paint before crossfading
                         if ('requestVideoFrameCallback' in video) {
-                            video.requestVideoFrameCallback(showVideo);
+                            video.requestVideoFrameCallback(() => {
+                                video.requestVideoFrameCallback(showVideo);
+                            });
                         } else {
-                            showVideo();
+                            // Fallback: wait a bit for frame to decode
+                            setTimeout(showVideo, 200);
                         }
                     }).catch(() => {
-                        // Autoplay blocked — show poster, that's fine
-                        poster.classList.add('loaded');
+                        // Autoplay blocked — poster is already showing, that's fine
                     });
                 }
             }
@@ -2929,6 +2933,15 @@
         })();
     </script>
 
-    <!-- Chatbot removed — Railway backend is down. Re-add once deployed. -->
+    <!-- Aria AI Chatbot -->
+    <script src="https://aria-chatbot-production-12d0.up.railway.app/chatbot.js"
+        data-name="Aria"
+        data-color="#2a7af0"
+        data-server="https://aria-chatbot-production-12d0.up.railway.app"
+        data-type="trades"
+        data-handoff-email="ejroofingltd@gmail.com"
+        data-handoff-wa="+447940763489"
+        data-prompt="You are Aria, the friendly AI assistant for E J Roofing & Construction LTD — a professional roofing and construction company based in Carlisle, Cumbria with over 10 years of experience. Services include: new roofs, flat roofing, roof repairs, chimney work, fascias & soffits, guttering, leadwork, pointing & rendering, fencing, and general construction. The company is fully insured and offers free quotes. Phone: 07940 763489. Email: ejroofingltd@gmail.com. Working hours: Mon-Sat 7am-6pm. When someone wants to book, collect their name, email, preferred date/time, and what work they need — then confirm the booking."
+    ></script>
 </body>
 </html>
