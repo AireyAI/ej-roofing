@@ -210,7 +210,7 @@
            NAVIGATION
            ═══════════════════════════════════════════════════════════════ */
         .nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            position: sticky; top: 0; z-index: 100;
             background: var(--nav-bg);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -311,11 +311,11 @@
            HERO
            ═══════════════════════════════════════════════════════════════ */
         .hero {
-            position: relative; min-height: 100vh; min-height: 100svh;
+            position: relative;
+            min-height: calc(100vh - 56px); min-height: calc(100svh - 56px);
             display: flex; align-items: center;
             overflow: hidden;
             color: #fff;
-            padding-top: 56px;
         }
         .hero-bg {
             position: absolute; inset: 0; z-index: 0;
