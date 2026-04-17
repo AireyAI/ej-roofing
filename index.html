@@ -320,11 +320,14 @@
         .hero-bg {
             position: absolute; inset: 0; z-index: 0;
         }
-        .hero-bg img {
+        .hero-bg img, .hero-bg video {
+            position: absolute; inset: 0;
             width: 100%; height: 100%; object-fit: cover; object-position: center;
         }
+        .hero-bg video { opacity: 0; transition: opacity 0.8s ease; z-index: 1; }
+        .hero-bg video.ready { opacity: 1; }
         .hero-bg::after {
-            content: ''; position: absolute; inset: 0;
+            content: ''; position: absolute; inset: 0; z-index: 2;
             background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.65) 100%);
         }
         .hero-content {
@@ -752,6 +755,9 @@
         <section class="hero" aria-label="Hero">
             <div class="hero-bg" aria-hidden="true">
                 <img src="photo_11.jpg" alt="" width="1920" height="1080" fetchpriority="high">
+                <video id="heroVideo" muted loop playsinline webkit-playsinline preload="metadata" poster="photo_11.jpg">
+                    <source src="hero-video.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="hero-content">
                 <div class="hero-copy">
@@ -1342,6 +1348,24 @@
             video.addEventListener('ended', () => { progress.style.width = '100%'; setTimeout(dismiss, 400); });
             enterBtn.addEventListener('click', (e) => { e.stopPropagation(); dismiss(); });
             setTimeout(() => { if (!dismissed) dismiss(); }, 9000);
+        })();
+
+        // ─── Hero video lazy play (after welcome dismisses) ───
+        (function(){
+            const v = document.getElementById('heroVideo');
+            if (!v) return;
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) return;
+            function play() {
+                const p = v.play();
+                if (p && p.then) p.then(() => {
+                    const show = () => v.classList.add('ready');
+                    if ('requestVideoFrameCallback' in v) v.requestVideoFrameCallback(show);
+                    else setTimeout(show, 200);
+                }).catch(() => {});
+            }
+            setTimeout(play, 1200);
+            v.addEventListener('canplay', play, { once: true });
         })();
 
         // ─── Nav scroll state ───
