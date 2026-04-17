@@ -1561,6 +1561,15 @@
         });
     </script>
 
+    <!-- Disable Aria confetti (strip the fullscreen canvas it injects) -->
+    <script>
+        new MutationObserver(muts => {
+            muts.forEach(m => m.addedNodes.forEach(n => {
+                if (n.tagName === 'CANVAS' && n.style && n.style.zIndex === '2147483647') n.remove();
+            }));
+        }).observe(document.body, { childList: true });
+    </script>
+
     <!-- Aria AI Chatbot -->
     <script src="https://aria-chatbot-production-12d0.up.railway.app/chatbot.js"
         data-name="Aria"
