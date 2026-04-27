@@ -31,6 +31,8 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="theme-color" content="#ffffff" id="themeColorMeta">
 
+    <script>try{if(sessionStorage.getItem('ej-banner-closed')==='1')document.documentElement.classList.add('banner-closed');}catch(e){}</script>
+
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"RoofingContractor","name":"E J Roofing & Construction LTD","description":"Family-run roofing contractor covering Carlisle, Penrith, Wigton, Brampton and the surrounding North-West. New roofs, repairs, flat roofing, chimneys, guttering.","url":"https://www.ejroofing.co.uk","telephone":"+447940763489","email":"ejroofingltd@gmail.com","priceRange":"££","image":"https://ejroofing.co.uk/og-image.jpg","areaServed":["Carlisle","Penrith","Wigton","Brampton","Dalston","Thursby","Longtown","Wetheral","Scotby"],"address":{"@type":"PostalAddress","addressCountry":"GB","addressRegion":"Cumbria"},"openingHours":"Mo-Sa 07:00-18:00"}
     </script>
@@ -310,7 +312,7 @@
             font-size: 13px; font-weight: 400;
             position: relative;
         }
-        .banner.hidden { display: none; }
+        .banner.hidden, .banner-closed .banner { display: none; }
         .banner strong { font-weight: 600; }
         .banner a { color: var(--blue); font-weight: 500; }
         .banner a:hover { text-decoration: underline; }
@@ -371,6 +373,7 @@
         .stat-num {
             font-size: clamp(40px, 5.5vw, 64px); font-weight: 500; line-height: 1;
             color: var(--text); letter-spacing: -0.02em; margin-bottom: 8px;
+            font-variant-numeric: tabular-nums; font-feature-settings: "tnum";
         }
         .stat-num sup { font-size: 0.6em; font-weight: 500; color: var(--blue); top: -0.3em; }
         .stat-label { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
@@ -508,10 +511,10 @@
         /* ═══════════════════════════════════════════════════════════════
            BEFORE / AFTER
            ═══════════════════════════════════════════════════════════════ */
-        .ba-container { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; user-select: none; cursor: ew-resize; border: 1px solid var(--border); }
-        .ba-after, .ba-before { position: absolute; inset: 0; overflow: hidden; }
+        .ba-container { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; user-select: none; -webkit-user-select: none; cursor: ew-resize; border: 1px solid var(--border); touch-action: none; }
+        .ba-after, .ba-before { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
         .ba-before { width: 50%; }
-        .ba-before img, .ba-after img { width: 100%; height: 100%; object-fit: cover; }
+        .ba-before img, .ba-after img { width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; user-select: none; pointer-events: none; }
         .ba-before img { position: absolute; left: 0; top: 0; width: calc(100vw); max-width: 1200px; }
         .ba-handle {
             position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff;
@@ -1501,11 +1504,12 @@
                 before.style.width = pct + '%';
                 handle.style.left = pct + '%';
             }
-            const start = (e) => { dragging = true; const x = e.touches ? e.touches[0].clientX : e.clientX; setPos(x); };
+            const start = (e) => { e.preventDefault(); dragging = true; const x = e.touches ? e.touches[0].clientX : e.clientX; setPos(x); };
             const move = (e) => { if (!dragging) return; const x = e.touches ? e.touches[0].clientX : e.clientX; setPos(x); };
             const stop = () => { dragging = false; };
             slider.addEventListener('mousedown', start);
-            slider.addEventListener('touchstart', start, { passive: true });
+            slider.addEventListener('touchstart', start, { passive: false });
+            slider.addEventListener('dragstart', (e) => e.preventDefault());
             window.addEventListener('mousemove', move);
             window.addEventListener('touchmove', move, { passive: true });
             window.addEventListener('mouseup', stop);
