@@ -60,8 +60,9 @@
            Primary: white canvas + single blue accent + photography-first
            ═══════════════════════════════════════════════════════════════ */
         :root, [data-theme="light"] {
-            --blue: #2a7af0;
-            --blue-hover: #1f68d6;
+            --blue: #1f68d6;
+            --blue-hover: #1856b8;
+            --blue-bright: #2a7af0;
             --carbon: #171a20;
             --graphite: #393c41;
             --pewter: #5c5e62;
@@ -314,8 +315,8 @@
         }
         .banner.hidden, .banner-closed .banner { display: none; }
         .banner strong { font-weight: 600; }
-        .banner a { color: var(--blue); font-weight: 500; }
-        .banner a:hover { text-decoration: underline; }
+        .banner a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+        .banner a:hover { opacity: 0.85; }
         .banner-close { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; opacity: 0.6; }
         .banner-close:hover { opacity: 1; }
 
