@@ -1595,11 +1595,16 @@
         });
     </script>
 
-    <!-- Aria AI Chatbot -->
+    <!-- Aria AI Chatbot — canary on the new lead-router endpoint (2026-05-15)
+         data-endpoint flips this client onto /api/chat/router for native tool-use
+         qualification + auto WhatsApp/email handoff staging. Streaming on for live deltas.
+         Rollback: remove data-endpoint and data-streaming lines. -->
     <script src="https://aria-chatbot-production-12d0.up.railway.app/chatbot.js"
         data-name="Aria"
         data-color="#2a7af0"
         data-server="https://aria-chatbot-production-12d0.up.railway.app"
+        data-endpoint="/api/chat/router"
+        data-streaming="true"
         data-type="trades"
         data-handoff-email="ejroofingltd@gmail.com"
         data-handoff-wa="+447940763489"
